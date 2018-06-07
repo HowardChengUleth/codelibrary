@@ -1,0 +1,128 @@
+#!/bin/bash
+
+default_player="uleth";
+
+echo "************************************************************";
+echo "***************          CODERUNNER          ***************";
+echo "************************************************************";
+echo;
+
+echo "Choose an option:";
+echo " 1. Run a simulation (computer vs computer)";
+echo " 2. Run a program that I have written against a computer on a random map";
+echo " 3. Run a program that I have written against a computer on a specific map";
+echo " 4. Run 2 programs that I have written against each other on a random map";
+echo " 5. Run 2 programs that I have written against each other on a specific map";
+echo " 6. Play interactively against a computer on a random map";
+echo " 7. Play interactively against a computer on a specific map";
+echo " 8. Run default program against a computer on a random map";
+echo " 9. Run default program against a computer on a specific map";
+echo "   Note: To change your \"default program\", open run in a text editor and";
+echo "         change the variable at the top.";
+echo;
+echo -n " > ";
+read choice
+
+red_player="";
+red_lang="cpp";
+blue_player="";
+blue_lang="cpp";
+map="";
+
+case $choice in
+    1)
+	;;
+    2)
+	echo -n "Program Name (Including path) > ";
+	read red_player;
+	;;
+    3)
+	echo -n "Program Name (Including path) > ";
+	read red_player;
+	echo -n "Map Number (0-7) > ";
+	read map;
+	;;
+    4)
+	echo -n "Program 1 Name (Including path) > ";
+	read red_player;
+	echo -n "Program 2 Name (Including path) > ";
+	read blue_player;
+	;;
+    5)
+	echo -n "Program 1 Name (Including path) > ";
+	read red_player;
+	echo -n "Program 2 Name (Including path) > ";
+	read blue_player;
+	echo -n "Map Number (0-7) > ";
+	read map;
+	;;
+    6)
+	red_player="interactive";
+	red_lang="";
+	;;
+    7)
+	red_player="interactive";
+	red_lang="";
+	echo -n "Map Number (0-7) > ";
+	read map;
+	;;
+    8)
+	red_player=${default_player}
+	;;
+    9)
+	red_player=${default_player}
+	echo -n "Map Number (0-7) > ";
+	read map;
+	;;
+esac
+
+if [ -z "$map" ]; then
+    map=`echo "$RANDOM % 8" | bc`;
+fi
+
+
+enemy_dir="/home/ramph4/uva/Library/acmgroup/Challenge/Programs";  #"/home/cheng/Challenge/Programs";
+enemy_name="NearestGold RandomMovements RunandDig RunToGold Camara";
+enemy=("NearGold GoToNearestGoldPlayer" Random/Random RunAndDig/runAndDig RunToGold/RunToGold Camara/Camara);
+enemy_lang=("java -cp " cpp cpp cpp cpp);
+
+
+
+if [ -z "$red_player" ]; then
+    echo "Choose red player:";
+    
+    count=0;
+    for x in $enemy_name
+    do
+	echo "  "${count}". " $x
+	count=$((count+1))
+    done
+    
+    read choice;
+    
+    red_player=${enemy_dir}/${enemy[choice]};
+    red_lang=${enemy_lang[choice]}
+fi
+
+if [ -z "$blue_player" ]; then
+    echo "Choose blue player:";
+    
+    count=0;
+    for x in $enemy_name
+    do
+	echo "  "${count}". " $x
+	count=$((count+1))
+    done
+    
+    read choice;
+    
+    blue_player=${enemy_dir}/${enemy[choice]};
+    blue_lang=${enemy_lang[choice]}
+fi
+
+echo "Red Player: ${red_player}"
+echo "Blue Player: ${blue_player}"
+
+echo "java -jar coderunner.jar -player ${red_lang} ${red_player} -player ${blue_lang} ${blue_player} -map ../maps/map0${map}.txt"
+java -jar coderunner.jar -player ${red_lang} ${red_player} -player ${blue_lang} ${blue_player} -map ../maps/map0${map}.txt -duration 700
+

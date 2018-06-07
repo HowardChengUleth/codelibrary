@@ -1,0 +1,30 @@
+Fingerless Gloves for Hugh!
+
+ - Maximum matching (http://apps.topcoder.com/forums/?module=Thread&threadID=601071&start=0&mc=3#921372)
+
+MOST LIKELY WANT:
+ - Area of Intersection of Circles
+ - Area of Union of Polygons
+
+MAYBE WANT:
+ - Centroid of a Simple Polygon
+ - Voronoi
+ - MST in Digraph
+ - Circle Described by X lines and Y points
+ - (Un)ranking of K-perm/comb out of N
+ - Vertex Cover, edge cover, disjoint set
+ - IDA* search?
+ - kd-tree?
+ - lowest common ancestor (Tarjan's offline algorithm, Wikipedia)?
+ - Rotating calipers (Chinese library)
+
+I SEE THIS IN A LIBRARY AND DON'T KNOW WHAT IT IS...
+ - Rectangle in Rectangle Test
+ - Polygon Midpoints -> vertices
+ - Minimum Weighted Steiner Tree
+ - Golden Section Search
+ - Sweep Circle
+
+RANDOM FORMULAS WE SHOULD KNOW:
+ - Triangle stuff (incircle, etc)
+ - Circle Stuff (chords, etc)

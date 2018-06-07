@@ -1,0 +1,589 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <title>2013 ICPC Challenge Rules</title>
+</head>
+<body>
+
+<h1>The Game</h1>
+<p>
+  The game, <i>CodeRunner</i>, is a two-player game.  Two players, one red and
+  one blue, each control a runner, which can move in the two-dimensional cellular
+  world and collect gold.  Enemies also inhabit the world, moving
+  around and killing the runners if they catch them.  The
+  runners earn points for collecting gold, killing enemies and
+  their opponent runner, and for visiting individual cells of
+  the world for the first time.
+</p>
+
+<p>
+  A match of <i>CodeRunner</i> proceeds through a series of turns.  Games can
+  vary in duration, from as few as <i>400</i> to as many
+  as <i>1200</i> turns.  At the start of each turn, both
+  players are given a description of the current state of the
+  game. For each turn, both players choose a move for their runners. Then,
+  based on the players’ moves, the game updates its state, and then
+  the next turn begins.
+</p>
+
+<p>
+  The enemies move around the world just like the players'
+  runners.  However, the enemies move more slowly than the
+  runners and their movement is controlled by the game rather
+  than the players.
+</p>
+
+<h2>The Game Map</h2>
+<p>
+  The game map is a fixed-size,
+  two-dimensional <i>16</i>-by-<i>25</i>
+  matrix of cells.  Although the game map is always the same
+  size, its contents can vary from
+  game to game.  A cell of the map may contain any of the
+  following:
+</p>
+
+<ul>
+  <li> It may contain <b>Empty</b>
+  <li> It may contain an indestructible section of <b>Ladder</b>
+  <li> It may contain a section a <b>Brick</b> platform
+  <li> It may temporarily contain a section of <b>Removed_Brick</b> platform
+  <li> It may contain <b>Gold</b>, available for the player to collect
+</ul>
+
+<p>
+  Coordinates on the map are defined by row and then
+  column.  The top row of the map is row <i>0</i> at the bottom is
+  row <i>15</i>.  The leftmost column is column <i>0</i>
+  and the rightmost is column <i>24</i>.
+</p>
+
+<p>
+  <img src="images/coordinate_system.png" alt="Coordinate system">
+</p>
+
+<p>
+The map is occupied by moving characters, two runners and a number of
+enemies.  These characters generally move by walking above cells containing
+<b>Brick</b> or climbing up and down through cells containing <b>Ladder</b>.
+</p>
+
+<h2>Game Physics</h2>
+
+<h3>Brick Destruction and Restoration</h3>
+
+<p>
+  A runner can temporarily destroy the <b>Brick</b> in a cell.  When this
+  occurs, the <b>Brick</b> in that cell is replaced by <b>Removed_Brick</b>
+  for <i>25</i> turns, after which it is restored to
+  <b>Brick</b>.  If a runner or an enemy is occupying the <b>Removed_Brick</b> cell
+  when it is restored to <b>Brick</b>, the runner or enemy is killed.
+</p>
+
+<a name="falling"></a>
+<h3>Falling</h3>
+
+<p>
+  Runners and enemies are affected by gravity.  They will fall down,
+  one cell each turn if they are not either on a ladder or standing on
+  something.  A runner or enemy is considered to be on a ladder if it's
+  in a cell that contains <b>Ladder</b>.  A runner or enemy is
+  considered to be standing on something if it's above a cell
+  containing either <b>Brick</b> or <b>Ladder</b> or <b>Removed_Brick</b> with an
+  enemy trapped in it.  Runners and enemies are also considered to be
+  standing on something if they are on the bottom-most row.
+</p>
+
+<p>
+  Runners will fall through a <b>Removed_Brick</b> cell, but falling enemies
+  will not.  Instead, if one or more enemies enter a <b>Removed_Brick</b>
+  cell, either by falling or any other move, they will become trapped
+  there until the <b>Brick</b> is restored.  While one or more enemies
+  are trapped in a <b>Removed_Brick</b> cell, runners and other enemies can
+  walk across the top of the cell without falling.  They just hop
+  across, stepping on the trapped enemy's head.
+</p>
+
+<p>
+  Falling runners and enemies can't perform any actions.  They can't
+  move and runners can't destroy bricks until they land on a surface.
+</p>
+
+<h3>Gold Collection and Respawn</h3>
+
+<p>
+  If a runner moves into a <b>Gold</b> cell during a turn, the runner
+  collects the gold.
+  The gold is replaced by an <b>Empty</b> for <i>150</i>
+  turns, after which it is restored to <b>Gold</b> and available for
+  collection again.
+</p>
+
+<h2>Runner Behavior</h2>
+
+<p>
+  Each runner starts the game at a location called the runner's
+  <i>respawn cell</i>.  If a runner is killed during the game, this is where
+  it will eventually reappear to resume playing.
+</p>
+
+<h3>Movement</h3>
+
+<p>
+In general, a runner can make 7 different moves.  It may use the
+<b>None</b> command to do nothing.  It may move one cell in any of four
+directions using the <b>Left</b>, <b>Right</b>, <b>Top</b> and <b>Bottom</b>
+commands.  Also, a runner may destroy the bricks below and to the left
+or below and to the right using the <b>Dig_Left</b> and <b>Dig_Right</b>
+commands.  For moving among cells, runner movements are subject to the
+following rules:
+
+
+<ol>
+  <li> A runner may always perform the <b>None</b> command.
+  </li>
+
+  <li> A runner can't move off the map.  For example, a runner can't
+    move left from the column zero or climb up from row <i>0</i>, even if
+    there's a ladder to climb on.
+  </li>
+
+  <li>
+    A runner can’t move into a cell that contains <b>Brick</b> and can't
+    move down into a cell containing <b>Removed_Brick</b> if it already has an
+    enemy trapped in it.
+  </li>
+
+  <li> If a runner is in a cell containing <b>Ladder</b>, the runner
+    can move in any of the four directions (<b>Left</b>, <b>Right</b>,
+    <b>Top</b> or <b>Bottom</b>), provided the previous conditions are not
+    violated.
+  </li>
+
+  <li> If a runner is above a cell containing <b>Brick</b>, <b>Ladder</b>,
+    or <b>Removed_Brick</b> with an enemy trapped in the cell, the runner can
+    perform the <b>Left</b> and <b>Right</b> commands, provided the previous
+    conditions are not violated.
+  </li>
+
+  <li> As described in the <a href="#falling">Falling</a> section, a
+    runner will fall if they are not on a <b>Ladder</b> or above
+    something they can stand on.
+  </li>
+</ol>
+
+</p>
+
+<a name="destroying"></a>
+<h3>Destroying <b>Brick</b> Cells</h3>
+
+<p>
+  <img src="images/dig_rules.png" alt="Dig to the left">
+</p>
+
+<p>
+  Instead of moving, a runner may use the <b>Dig_Left</b> and
+  <b>Dig_Right</b> commands to temporarily destroy the <b>Brick</b> in the
+  cell below and to the left, or the cell below and to the right of the
+  runner's location.  The ability to perform this action depends on
+  the state of the runner and contents of the neighboring cells.
+  Successfully destroying a brick requires the following:
+  <ol>
+    <li>The runner must be alive.</li>
+    <li>The runner hasn't destroyed a brick too recently.  After
+    successfully destroying a brick, the runner can't destroy another
+    one until <i>10</i> turns later.  If, for
+    example, a runner destroys a <b>Brick</b> at turn number <i>t</i>,
+    the runner won't be able to destroy another <b>Brick</b> until
+    turn <i>t+10</i>. </li>
+    <li>The runner must not be on the bottom-most row.  The runner can
+    occupy this row, but there are no bricks below it to destroy.</li>
+    <li>The runner must be on a ladder (<b>Ladder</b> in the Runner
+    Cell of the above figures) or standing on something solid (either <b>Brick</b> or
+    <b>Ladder</b> in the Lower Cell of the figure).</li>
+    <li>The Side Cell of the figure must not contain <b>Brick</b> or <b>Ladder</b>.</li>
+    <li>Of course, the Target Cell must contain <b>Brick</b>.</li>
+  </ol>
+</p>
+
+<p>
+  If all these conditions are met, the runner is able to destroy a
+  brick, temporarily replacing the <b>Brick</b> with <b>Removed_Brick</b>.
+</p>
+
+<h3>Runner Death</h3>
+
+<p>
+  <img src="images/runner_killed.png" alt="Runner killed when caught
+  by an enemy.">
+</p>
+
+<p>
+  A runner can be killed by one of the enemies.  A runner is killed if
+  it occupies the same cell as an enemy at the end of a turn, or if
+  the runner and an enemy exchange positions during a turn.
+  Otherwise, the runner will not be killed if it moves into a cell, and
+  an enemy moves out of that cell in the same turn.  The red and blue
+  runners have no effect on each other, and can pass through each
+  other without either one being killed.  A runner is also be killed
+  if it is in a <b>Removed_Brick</b> when it is restored to a <b>Brick</b>.
+</p>
+
+<p>
+  After dying, a runner respawns in its
+  <i>respawn cell</i> <i>50</i> turns after a being
+  killed.  Of course, a runner that is killed can't make any moves
+  until it is respawned <i>50</i> later.
+</p>
+
+<a name="enemies"></a>
+<h2>Enemy Behavior</h2>
+
+<p>
+  Like the runners, each enemy starts the game at a location called
+  its <i>respawn cell</i>.  If an enemy is killed during the game, it will
+  eventually reappear at its <i>respawn cell</i>.
+</p>
+
+<h3>Movement</h3>
+
+<p>
+  In general, an enemy can perform 5 different actions, they can do
+  everything a runner can do except destroy bricks.  Enemy movement is
+  subject to the same constraints as runner movement, except that they
+  become trapped in a <b>Removed_Brick</b> cell after entering it.
+  <ol>
+    <li> An enemy may always perform the <b>None</b> command.
+    </li>
+
+    <li> An enemy can't move off the map.  For example, an enemy can't
+      move right from column number <i>24</i>.
+    </li>
+    
+    <li>
+      An enemy can’t move into a cell that contains <b>Brick</b> and can't
+      move down into a cell containing <b>Removed_Brick</b> if it already has another
+      enemy trapped in it.
+    </li>
+    
+    <li>
+      An enemy can move into a cell that contains <b>Removed_Brick</b>, but,
+      after entering, the enemy becomes trapped and can't move out of
+      the cell until it is killed when the <b>Brick</b> is restored.
+    </li>
+    
+    <li> If an enemy is in on a cell containing <b>Ladder</b>, the enemy
+      can move in any of the four directions, provided the previous
+      conditions are not violated.
+    </li>
+    
+    <li> If an enemy is above a cell containing <b>Brick</b>,
+      <b>Ladder</b>, or <b>Removed_Brick</b> with an enemy trapped in the cell,
+      the enemy can move left or right, provided the previous
+      conditions are not violated.
+    </li>
+
+    <li> As described in the <a href="#falling">Falling</a> section, an
+      enemy will fall if they are not on a <b>Ladder</b> or above
+      something they can stand on.
+  </li>
+  </ol>
+</p>
+
+<p>
+  Enemies fall at the same speed as the runners,
+  but, otherwise, they move half as fast.  Each enemy gets to move
+  once every two turns.  If an enemy moves
+  at turn <i>t</i>, it won't be able to move again until turn <i>t+2</i>.  If,
+  however, the enemy moves above a <b>Removed_Brick</b> cell during turn <i>t</i>, it
+  will fall into it during turn <i>t+1</i>. The first move is made at the first turn (turn number <i>0</i>).
+</p>
+
+<h3>Enemy Death</h3>
+
+<p>
+  Enemies are killed only when they become trapped in a <b>Removed_Brick</b>
+  cell and the <b>Brick</b> is restored.  When this occurs, the enemy is
+  temporarily removed from the map and unable to move.  The enemy
+  respawns on his <i>respawn cell</i> <i>25</i> turns after
+  being killed. If the enemy is killed at turn <i>t</i>, then it will be able to move at turn 
+  <i>t+25</i>.
+</p>
+
+
+    <h3>Movement Algorithm</h3>
+
+    <p>
+    Enemies have two basic modes of operation as they move around the
+    map.  If no runner is nearby, they operate in <i>patrol</i> mode,
+    repeatedly following a fixed circuit in the map.  When a runner is
+    nearby, they operated in <i>pursuit mode</i>, chasing the nearest
+    runner.
+    </p>
+
+    <h4>Patrol Mode Program</h4>
+    
+    <p>
+        When in patrol mode, the enemy follows a circuit defined by a
+        fixed list of movement instructions, the
+        enemy's <i>program</i>.  Each instruction is a move command,
+        <b>Left</b>, <b>Right</b>, <b>Top</b> or <b>Bottom</b>.  Each enemy's
+        program is guaranteed to create a circuit, taking the enemy back
+        to its <i>respawn cell</i> after the last instruction. The enemy
+        executes its program repeatedly: after performing the last
+        instruction, the enemy switches to the first one.  If an enemy
+        dies, it starts performing its program from the first
+        instruction after it respawns.  The list of instructions is
+        consistent: unless the enemy becomes trapped in a hole, it
+        will always be able to perform its current instruction.
+    </p>
+
+    <p>
+        Falling may be part of an enemy's program.  Falling is
+        simply represented as a sequence of <b>Bottom</b> commands in the
+        program, with the number of <b>Bottom</b> commands equal to the
+        number of turns the enemy falls.
+    </p> 
+
+    <h4>Pursuit Mode</h4>
+
+    <p>
+        When an enemy chooses its move, it first checks to see if
+        there is a runner a short distance away.  If there is, the
+        enemy will pursue the runner rather than follow its circuit.
+        Enemies measure the distance to some destination, <i>d</i>, as the
+        length of the shortest <i>reversible path</i> to
+        location <i>d</i>.  A <i>reversible path</i> to <i>d</i> is
+        just a sequence of moves that will get the enemy to
+        location <i>d</i> without using any falling.
+    </p>
+    
+    <p>
+        Enemies use a Breadth-First Search (BFS) based on the game
+        rules to find the shortest reversible path to a destination.
+        This search does not permit the enemy to use falling, and it
+        ignores cell values of <b>Removed_Brick</b>, treating them as
+        <b>Brick</b> instead.  Effectively, the enemy's plan for
+        reaching a destination assumes bricks will be restored by the
+        time the enemy needs to walk across them.  If several equally
+        short paths exist to a destination, the enemy will choose one
+        deterministically, using a rule that depends on the enemy's
+        <i>respawn cell</i>.  Enemies that start on the left side of the map
+        will prefer to use <b>Top</b> first.  If they can't use <b>Top</b>
+        first, they will prefer <b>Right</b>, then <b>Bottom</b>, and then
+        <b>Left</b>.  So, given a choice between the plans <b>Left</b>,
+        <b>Bottom</b>, <b>Bottom</b>, <b>Right</b> and <b>Right</b>, <b>Bottom</b>,
+        <b>Bottom</b>, <b>Left</b>, an enemy that started on the left side of
+        the map will prefer <b>Right</b>, <b>Bottom</b>, <b>Bottom</b>, <b>Left</b>.
+        An enemy with a <i>respawn cell</i> on the right prefers <b>Top</b>,
+        then <b>Left</b>, then <b>Bottom</b>, then <b>Right</b>.  Faced with the
+        same choice, an enemy from the right side of the map would
+        choose <b>Left</b>, <b>Bottom</b>, <b>Bottom</b>, <b>Right</b>.
+    </p>
+
+    <p>
+        Every enemy maintains a <i>chase radius</i> for each of the two
+        runners.  If the distance to a runner's location is less than or equal to
+        that runner's chase radius, then the enemy will switch to
+        pursuit mode and take the move along the shortest reversible
+        path to the runner's location.  Initially, every enemy has a
+        chase radius of <i>5</i> for both
+        runners.  The chase radius changes when an enemy is killed by
+        a runner.  The runner that most recently killed a particular
+        enemy is called that enemy's master, and the enemy will prefer
+        to chase the other runner.  The chase radius for the master is
+        only <i>4</i>, while the chase radius
+        for the other runner is <i>8</i>.
+        If an enemy is killed by a brick that was removed by both
+        players simultaneously, then the enemy has no master and its
+        chase radius is set to <i>5</i> for both runners.
+    </p>
+
+    <p>
+        While a runner is inside its chase radius, enemies in pursuit
+        mode push every move they make onto a stack.  The enemy uses
+        this stack to find its way back to its circuit when it no
+        longer has a runner to pursue; it's the reason the enemy
+        will not use falling to pursue a runner.  If an enemy is in
+        pursuit mode and both of the runners move to be outside the
+        chase radius, the enemy will begin popping moves off its stack
+        and making the opposite move.  For example, if a <b>Left</b> is
+        on top of the stack, the enemy will pop it and move <b>Right</b>.
+        Once the stack is empty, the enemy returns to patrol mode if no
+        runner is within its chase radius.  At this point, the enemy
+        will resume running its program right were it left off when it
+        entered pursuit mode.
+    </p>
+
+    <p>
+        If both runners are within the chase radius for an enemy, the
+        enemy will chase the one that's closer. If there is a tie,
+        the enemy will compare the first moves of the shortest paths
+        to each runner.  If these moves are different, it will chose
+        one based on its move preference order, <b>Top</b>, <b>Right</b>,
+        <b>Bottom</b>, <b>Left</b> for enemies starting on the left and
+        <b>Top</b>, <b>Left</b>, <b>Bottom</b>, <b>Right</b> for enemies starting
+        on the right.  If the first moves of these paths are the same,
+        then the enemy will just make this move.
+    </p>
+
+<h2>Scoring</h2>
+
+<p>
+  Runners score points for various events that occur during the game.
+  At the end, the player with the highest score is the winner.
+  Runners score points for the following:
+
+<ul>
+  <li> Every time a runner enters a cell containing <b>Gold</b>, he
+  gets <i>100</i> points. If the both runners enter the
+  cell during the same turn, they both earn <i>100</i>
+  points.
+  </li>
+
+  <li>
+    Runners earn <i>1</i> point for every unique cell
+    of the map they visit first.  For example, if the red runner enters
+    a cell that neither runner has previously entered, the red runner
+    earns a point and the blue runner won't be able to earn a point for
+    that cell.  If two runners enter a previously unvisited cell during
+    the same turn, they both earn a point for it.
+  </li>
+
+  <li>
+    When an enemy is killed by the restoration of a <b>Brick</b>, the
+  runner who destroyed the brick is awarded <i>20</i>
+  points.  If multiple enemies are trapped in the same <b>Removed_Brick</b>
+  cell, the runner earns points for each one.  If both runners destroy
+  the same brick at the same time, they both earn points for any
+  enemies killed when that brick is restored.
+  </li>
+
+<li>
+  If runner <i>A</i> destroys a brick and his opponent,
+  runner <i>B</i>, is later killed by the restoration of that brick,
+  runner <i>A</i> is awarded <i>300</i> points.
+  Runner <i>A</i> receives these points even if both runners destroy
+  the brick at the same time, but runners never receive points for
+  killing themselves in this way.
+  </li>
+</ul>
+</p>
+
+<h2>Game Event Ordering</h2>
+
+<p>
+  Many things can occur during a turn.  Runners and enemies can move, 
+  fall and respawn, runners can destroy bricks and collect gold,
+  runners and enemies can be killed, and
+  bricks, gold runners and enemies can respawn.
+  During a turn, the game processes these events in the following order:
+  <ol>
+    <li>Runner and enemy moves are applied.  If a character is
+    falling, it moves down one cell.</li>
+    <li>Runners are killed if they passed through an enemy while
+    moving.  This can happen if the runner and enemy exchange
+    positions during the turn.</li>
+    <li>If a runner successfully performs <b>Dig_Left</b> or
+    <b>Dig_Right</b>, the <b>Brick</b> is replaced by REMOVED_BRICK.</li>
+    <li> <b>Brick</b> and <b>Gold</b> values are restored and runners and
+    enemies are respawned if the
+    appropriate number of turns have passed since they were destroyed,
+    collected or killed.  Runners and enemies
+    occupying the same cell as a restored <b>Brick</b> are killed.</li>
+    <li>Runners collect gold if they have moved into a cell
+    containing gold.</li>
+    <li>A runners dies if it now occupies the same cell as an enemy.</li>
+  </ol>
+</p>
+
+<p>
+  <img src="images/event_ordering.png" alt="Illustrations of some of
+                                            the special cased of event
+                                            ordering described below.">
+</p>
+
+<p>
+  Under some circumstances, this ordering of events has consequences
+  for how points are scored and whether a particular action is
+  successful.  For example:
+  <ul>
+    <li> If a runner and an enemy both move into a cell containing
+    <b>Gold</b>, the runner will be killed, but he will be able to
+    collect the gold first.</li>
+    <li> If a runner passes through an enemy while moving to a cell
+    with <b>Gold</b>, the runner doesn't collect the gold because it is
+    killed first.</li>
+    <li> If an enemy is standing on a brick next to a runner, and
+    the runner destroys the brick while the enemy moves toward the
+    runner, the brick will be destroyed, but the runner will also be
+    killed by the enemy. </li>
+    <li> If a runner and an enemy both move into a <b>Removed_Brick</b> during
+    the turn when the <b>Brick</b> is restored, the runner will be
+    considered killed by the <b>Brick</b> restoration rather than killed
+    by the enemy.</li>
+  </ul>
+</p>
+
+</body></html>

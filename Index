@@ -1,0 +1,187 @@
+Index of programming contest code library
+
+Howard Cheng
+
+Arithmetic:
+  bigint:
+    Big (signed) integer arithmetic
+  bignumber.java:
+    Java template for using large integer arithmetic (BigInteger)
+  cra:
+    Chinese remainder theorem
+  diophantine_sys:
+    Linear system of diophantine equations (works for single equation too!)
+  euclid: 
+    Euclidean algorithm
+  eulerphi:
+    Computes the Euler phi (totient) function: given a positive n, return
+    the number of integers between 1 and n relatively prime to n.
+  exteuclid: 
+    Extended Euclidean algorithm
+  exp: 
+    Fast exponentiation
+  expmod: 
+    Fast exponentiation mod m
+  factor:
+    Integer prime factorization
+  factor_large:
+    Integer prime factorization for larger integers (>= 2^40)
+  fflinsolve:
+    Fraction-free solution of linear systems of equations (for systems
+    with integer coefficients)
+  frac2dec:
+    Obtain the decimal representation of a fraction.
+  fraction:
+    A rational number class.
+  infix:
+    Parses and evaluates infix arithmetic expressions.
+  int_mult:
+    Multiply integer factors on the numerator, divide by the integer
+    factors in the denominator without overflow.
+  linsolve:
+    Solves linear systems of equations with LU decomposition.
+  mult:
+    Multiply factors on the numerator, divide by the factors in the 
+    denominator without overflow.
+  ratlinsolve:
+    Rational solution of linear systems of equations (can be solved by
+    fflinsolve as well).
+  roman_numerals
+    Converts between Arabic and Roman numerals.
+
+Geometric (mostly 2-D):
+  areapoly: 
+    Computes the signed area of a simple (no self-intersection) polygon.
+  ccw: 
+    Determines the orientation of 3 points (counterclockwise, clockwise, 
+    undefined).
+  circle_3pts: 
+    Computes the center and radius of a circle given 3 points.
+  convex_hull: 
+    Computes the convex hull of a list of points.
+  dist3D:
+    Computes the distance between two points, a point and a line segment, 
+    two line segments, or a point and a triangle in 3D.  There are also
+    corresponding versions for infinite lines and infinite planes.
+  dist_line: 
+    Computes the distance of a point to a line.
+  greatcircle:
+    Computes the distance between two points on a sphere along the surface.
+    Also has routines to convert between Cartesian coordinates and
+    spherical coordinates.
+  heron:
+    Computes the area of a triangle given the lengths of 3 sides.
+  intersect_circle_circle:
+    Computes the intersection of two circles.
+  intersectTF: 
+    Given two line segments, return whether they intersect or not (but 
+    doesn't return the point of intersection)
+  intersect_line: 
+    Given two 2-D line segments, return whether they intersect or not, and 
+    return the point of intersection if there is a unique one.
+  intersect_iline:
+    Given two 2-D lines (infinite), return whether they intersect or not,
+    and return the point of intersection if there is a unique one.
+  intersect_iline_circle:
+    Given an infinite 2-D line and a circle, return whether they intersect
+    and also the point(s) of intersection.
+  pointpoly: 
+    Given a polygon and a point, determines whether the point is in the 
+    polygon.  The behaviour when the point is on the boundary is left to 
+    the user.
+  polygon_inter: 
+    Given two convex polygons, compute their intersection as another 
+    polygon.
+
+Graph:
+  bellmanford:
+    Computes the shortest distance from one vertex to all other
+    vertices.  Also computes the paths.  It is slow (O(n^3)) but
+    handles negative weights.  Can also be used to detect negative
+    cycles.
+  bfs_path:
+    Computes the shortest distance from one vertex to all other
+    vertices.  Also computes the paths.  The edges in the graph must
+    have equal cost.
+  bicomp:
+    Finds the biconnected components and articulation points of a graph.
+  dijkstra: 
+    Computes the shortest distance from one vertex to all other
+    vertices.  Also computes the paths.
+  dijkstra_sparse:
+    Same as dijkstra but for sparse graphs.  Complexity O((n+m) log(n+m)).
+  eulertour:
+    Determines if there is an Eulerian tour in the graph.  If so,
+    find one.
+  floyd: 
+    Computes the shortest distance between any two vertices.
+  floyd_path: 
+    Like floyd, but also stores the paths.
+  hungarian:
+    Maximum/minimum weight bipartite matching.  O(N^3).
+  matching:
+    Compute unweighted matching of bipartite graphs.  (Matthew)
+  mst:
+    Compute the minimum spanning tree.
+  mincostmaxflowdense:
+    Compute the minimum cost maximum flow in a network.  Good for
+    dense graphs when maximum flow is small.  Complexity is O(n^2 * flow).
+  mincostmaxflowsparse:
+    Compute the minimum cost maximum flow in a network.  Good for
+    sparse graphs when maximum flow is small.  Complexity is 
+    O(m log(m) * flow).
+  networkflow:
+    Compute the maximum flow in a network.  Uses Ford-Fulkerson
+    with complexity O(fm) where f is the value of the maximum flow
+    and m is the number of edges.  Good for sparse graphs where
+    the maximum flow is small.
+  networkflow2:
+    Compute the maximum flow in a network.  Uses relabel-to-front
+    with complexity O(n^3).  Good for dense (but small) graphs
+    where the maximum flow is large.
+  scc:
+    Compute the strongly connected components (and possibly the
+    compressed graph) of a directed graph.
+  top_sort:
+    Topological sort on directed acyclic graph (or detect if a
+    cycle exists). O(n+m)
+
+Data Structures:
+  fenwicktree:
+    A data structure that supports the maintainence of cumulative sums
+    in an array dynamically.  Most operations can be done in O(log N)
+    time where N is the number of elements.
+
+  suffixarray:
+    An O(n) algorithm to construct a suffix array (and longest
+    common prefix information) from a string.
+
+Miscellaneous:
+  asc_subseq:
+    Longest (strictly) ascending/decreasing subsequence.
+  binsearch:
+    Binary search that also returns the position to insert an
+    element if it is not found.
+  common_subseq:
+    Find the longest common subsequence of the two sequences.
+  date:
+    A class for dealing with dates in the Gregorian calendar.
+  dow:
+    Computing the day of the week.
+  josephus:
+    Finding the last survivor and killing order of the Josephus problem.
+  kmp:
+    Linear time string searching routines.
+  int_prog:
+    Integer programming.
+  simplex:
+    Linear programming by simplex algorithm.
+  str_rotation_period:
+    Computes the lexicographically least rotation of a string, as well
+    as its period.
+  unionfind: 
+    Union-find implementation to compute equivalence classes.
+  vecsum: 
+    Find the contiguous subvector that gives the largest sum.
+  zero_one:
+    Zero-one programming.

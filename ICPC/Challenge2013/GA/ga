@@ -1,0 +1,54 @@
+#!/bin/bash
+
+NUM_GENERATIONS=30
+POP_SIZE=70
+MUT_RATE=0.25
+NUM_KEEP=18
+GAMES_PER_ALPHA=9
+
+
+echo "Running with the following parameters:";
+echo "  Generations: ${NUM_GENERATIONS}";
+echo "  Population : ${POP_SIZE}";
+echo "  Number Keep: ${NUM_KEEP}";
+echo "  Games      : ${GAMES_PER_ALPHA}";
+
+rm -f games/*
+rm -f alphadir/*
+rm -f current_snapshot/*
+rm -f GENERATION_DONE
+rm -f tmp.condor
+
+cp -f ../Player/alpha ./
+cp -f ../Player/uleth ./
+cp -f ../Player/* ./current_snapshot/
+
+head -n -1 run_generation.condor > tmp.condor
+echo "queue $(( $POP_SIZE * $GAMES_PER_ALPHA ))" >> tmp.condor
+
+./init alpha -p ${POP_SIZE} -m ${MUT_RATE} -t ${NUM_KEEP} -g ${GAMES_PER_ALPHA}
+
+cp alpha alphadir/alpha.0
+
+echo "To view the status of the current generation, run the following and treat it as a fraction:";
+echo "   ./status";
+echo;
+
+for (( i=0 ; i<${NUM_GENERATIONS} ; i++ ))
+do
+    echo "*************************************";
+    echo "          GENERATION ${i};           ";
+    date;
+    rm -f games/results*
+    condor_submit tmp.condor;
+
+    while [ ! -f GENERATION_DONE ];
+    do
+	sleep 15
+    done
+
+    rm -f GENERATION_DONE
+    ./nextgen alpha -p ${POP_SIZE} -m ${MUT_RATE} -t ${NUM_KEEP} -g ${GAMES_PER_ALPHA}
+done
+
+echo "I am done"

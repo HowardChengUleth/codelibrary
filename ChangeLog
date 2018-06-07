@@ -1,0 +1,93 @@
+Change Log for the programming contest code library.
+
+Howard Cheng <hchcheng@daisy.uwaterloo.ca>
+Jan 16, 1998
+
+--------------------------------------------------------------------------
+
+Changes since Dec 15, 1998:
+
+cqueue:
+  1. Addition to the library.  Circular queue that can be resized to grow.
+     From Matthew.
+
+linsolve:
+  1. Addition to the library.  Solves systems of linear equations.
+
+matching:
+  1. Addition to the library.  Unweighted matching on bipartite graphs.
+     From Matthew.
+
+--------------------------------------------------------------------------
+
+Changes since Feb 1998:
+
+General:
+  1. lots of changes to geometry code to make all comparisons allow for an
+     error of EPSILON.  May need to choose EPSILON smartly (I have yet to
+     encounter a problem in which 1E-8 doesn't work).  Only changed the
+     ones that include equality and inequality (==, !=, <=, >=)
+  2. stripped ending Ctrl-Z added by DOS/Windows
+
+asc_subseq:
+  1. fixed bug responsible for producing incorrect subsequences
+
+bfs_path:
+  1. added "max" for gcc to work (does VisualAge still define min/max?)
+  2. fixed comment about tie-breaker: it doesn't produce the largest
+     path in lexicographical order
+  3. removed unused variables
+  
+bignum:
+  1. removed unused variable
+
+binom:
+  1. removed from the library.  It doesn't always work :(
+
+ccw:
+  1. changed all absolute comparison to allow for an error of EPSILON
+
+circle_3pts:
+  1. changed comparisons to allow for an error of EPSILON
+
+common_subseq:
+  1. added "max" for gcc to work
+
+convex_hull:
+  1. changed comparisons to allow for an error of EPSILON
+
+dist_line:
+  1. added an assertion to ensure that the points actually define a valid
+     line.
+
+dow:
+  1. added return type for "main"
+
+intersect*:
+  1. changed comparisons to allow for an error of EPSILON
+
+intersect_iline:
+  1. changed name of function to be intersect_iline.
+  2. eliminated the variable t which does nothing.
+
+ispow2:
+  1. I hated the indentation and spacing, so I changed it
+
+mult:
+  1. added a driver "main" routine for testing
+  2. changed the order of parameters to match int_mult
+
+pointpoly:
+  1. changed comparisons to allow for an error of EPSILON
+
+polygon_inter:
+  1. changed comparisons to allow for an error of EPSILON
+  2. doesn't compile!  fixed undeclared variable
+  3. changed malloc of "used" (allocated too much)
+
+traverse:
+  1. added min/max for gcc to work
+
+vecsum:
+  1. added comment on what the tie-breaking example does
+

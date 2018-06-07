@@ -1,0 +1,24 @@
+R.........*****.........B
+==========.=H=.==========
+.*.........=H=.........*.
+H=========H=H=H=========H
+H.........H*H*H.........H
+==========H.H.H==========
+.*........H*H*H........*.
+H=======================H
+H..........***..........H
+==========H***H==========
+..........H***H..........
+H==========...==========H
+H.......................H
+H.......................H
+H.......................H
+=========================
+7
+2 0 RRRRRRRRRRLLLLLLLLLL
+4 0 RRRRRRRRRRLLLLLLLLLL
+6 0 RRRRRRRRRRRRTTTTTTRLBBBBBBLLLLLLLLLLLL
+8 0 RRRRRRRRRRLLLLLLLLLL
+10 0 RRRRRRRRRRLLLLLLLLLL
+14 1 RRRRRRRRRRRLLLLLLLLLLL
+14 11 LLLLLLLLLLLRRRRRRRRRRR

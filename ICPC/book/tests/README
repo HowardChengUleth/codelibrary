@@ -1,0 +1,9 @@
+Randomly generated numbers are tested.
+
+Run all of the tests by using the command:
+
+# bash allTests.sh
+
+NOTE:
+ - This will not catch boundary cases (most likely)
+ - The tests are slow because I compile and delete a lot.

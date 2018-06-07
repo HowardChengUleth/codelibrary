@@ -1,0 +1,264 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <title>2013 ICPC Challenge Usage Instructions</title>
+</head>
+<body>
+
+<h1>Usage Instructions</h1>
+    <p>
+        The game engine is implemented in Java and supports several command-line options to let the user
+        run games with different players and with different output behavior. Since players are implemented
+        as separate executables, the developer is free to use any development environment to code the
+        player behavior. In principle, any programming language may be used to implement a player, but
+        the submission site will only accept players written in C++ and Java.
+    </p>
+    <p>
+        When you download the game distribution binary, you will receive a zip file containing a small directory
+        structure for the game. The jar file <i>coderunner.jar</i> contains the executable code for the game, and other
+        subdirectories contain sample map files and example players implemented in C++ and Java.
+    </p>
+    <p>
+        The coderunner.jar file has the main game class (<i>icpc.challenge.main.Game</i>) defined as its entry point. You
+        can run matches by simply giving this jar file as the first argument to the Java interpreter. Alternatively,
+        you can run other classes in <i>coderunner.jar</i> by putting <i>coderunner.jar</i> in your <i>CLASSPATH</i> and specifying
+        some other class as the entry point.
+    </p>
+
+<h2>Making Something Happen</h2>
+    <p>
+        If you just want to see a game running, you can unpack the game distribution binary and run the following
+        command from the top-level directory. This will start the game with a basic 2D view of the field and with
+        two copies of the example Java player competing against each other.
+    </p>
+    <p>
+        <pre>java -jar coderunner.jar -player java -cp java_example GoToNearestGoldPlayer -player java -cp java_example GoToNearestGoldPlayer</pre>
+    </p>
+
+<h2>Game Visualization</h2>
+    <p>
+        The default view may be too large for users with small screens. To help with this, the game, the trace player and
+        the turn player (described below) accept a <i>-view simple80</i> and a <i>-view simple60</i> option. These options
+        create a view of the game that is 80 percent or 60 percent of the width and height of the standard view. For example,
+        the following will show a match between the two example players using a reduced view size.
+    </p>
+    <p>
+        <pre>java -jar coderunner.jar -player cpp c++_example/runAndDig -player java -cp java_example GoToNearestGoldPlayer -view simple60</pre>
+    </p>
+
+<h2>Running a C++ Player</h2>
+    <p>
+        Let's say you've implemented a player in C++. You've compiled your player to an executable called <i>bill</i>. You can
+        run this player as the red player using the following command line. You will be playing against a copy of the
+        example player GoToNearestGoldPlayer.
+    </p>
+    <p>
+        <pre>java -jar coderunner.jar -player cpp bill -player java -cp java_example GoToNearestGoldPlayer</pre>
+    </p>
+
+<h2>Running a Java Player</h2>
+    <p>
+        Let's say you've implemented a player in Java. You've compiled
+        your player to a class called <i>Lucy</i> in the current directory. You can
+        run this player as the blue player using the following command line. Here, you will be playing against a
+        copy of the Java example player.
+    </p>
+    <p>
+        <pre>java -jar coderunner.jar -player java -cp java_example GoToNearestGoldPlayer -player java Lucy</pre>
+    </p>
+    <p>
+        Remember that Java players are expected to reside in the default Java package. The command-line
+        option, <i>-cp</i>, lets you specify a class path for a Java player. We have to do this with the example Java players,
+        since they don't have a package prefix, but they are located under the <i>java_example</i> directory. If your Java
+        class files are in the current directory or are already accessible from the <i>CLASSPATH</i>, you should not need
+        to use the <i>-cp</i> option.
+    </p>
+
+<h2>Running an Arbitrary Player</h2>
+    <p>
+        The above examples of running a player as a C++ executable or as a Java program are really just special cases of
+        the same start-up mechanism. The game engine's <i>-player pipe</i> option gives a more general mechanism for running
+        the player executable. This method for starting up a player can let you pass in additional command-line parameters to
+        the player if these are useful during development.
+    </p>
+    <p>
+        The pipe keyword is followed by an integer <i>n</i>. The next <i>n</i> command-line arguments are taken as the command
+        line for the executable that is to serve as the player. For example, the following command line could be used to run
+        the C++ program, <i>bill</i>, as the blue player and a Java program, <i>Lucy</i>, as the red player.
+    </p>
+    <p>
+        <pre>java -jar coderunner.jar -player pipe 2 java Lucy -player pipe 1 bill</pre>
+    </p>
+
+<h2>Running an Interactive Player</h2>
+    <p>
+        If you want, you can control a runner via keyboard. Use the
+        following command line to control the blue player interactively.
+    </p>
+    <p>
+        <pre>java -jar coderunner.jar -player java -cp java_example GoToNearestGoldPlayer -player interactive</pre>
+    </p>
+    <p>
+      When you're controlling one of the runners, the arrow keys are
+        used to move the player around the map.  The 'A' key is used
+        to destroy the brick on the lower left and the 'D' key is used
+        to destroy the brick on the lower right.
+    </p>
+
+<h2>Recording a Game</h2>
+    <p>
+        If you want, you can send a record of game events to a trace file for later viewing. The following command will create
+        a rather large trace file called <i>trace.txt</i> containing the sequence of game events.
+    </p>
+    <p>
+        <pre>java -jar coderunner.jar -player java Lucy -player cpp bill -view trace trace.txt</pre>
+    </p>
+    <p>
+        After you generate a trace file, you can play it back with a trace player. If you've added <i>coderunner.jar</i> to your
+        <i>CLASSPATH</i>, then the following command will play back this trace.
+    </p>
+    <p>
+        <pre>java icpc.challenge.view.TracePlayer -trace trace.txt</pre>
+    </p>
+
+<h2>Recording a Turn History</h2>
+    <p>
+        The trace file generated by the <i>-view trace</i> option records game event information used by the game's
+        visualization components. It includes extra information that players don't get to see. The <i>-view turns</i> option
+        is intended to capture the sequence of messages exchanged between the game and its two players. Running a game with
+        a command like the following will create a turn history file
+        called <i>turns.txt</i> that contains the initial world description,
+        followed by the sequence of game states as seen by the red player. In the turn history, each game state is followed
+        by the move response that was received from each of the players.
+    </p>
+    <p>
+        <pre>java -jar coderunner.jar -player java Lucy -player cpp bill -view turns turns.txt</pre>
+    </p>
+    <p>
+        A turn history is intended to help developers debug their players. The file reports game states and moves as seen by
+        the game engine.
+    </p>
+    <p>
+        A game can be visualized using its turn file. Since the turn file omits some of the information that's included in a
+        trace, the visualization will not be as smooth and it will not include all effects. However, it can still be useful to
+        give the developer a sense of what was going on at a particular point in the game. If you've added <i>coderunner.jar</i> to
+        your <i>CLASSPATH</i>, The following command will play back a game from its turn file.
+    </p>
+    <p>
+        <pre>java icpc.challenge.view.TurnPlayer -turns turns.txt</pre>
+    </p>
+
+<h2>Alternative Maps</h2>
+    <p>
+        The game automatically uses a default map if you don't specify
+        otherwise.  In the preliminary matches and
+        in the final tournament, the starting map will vary from match to match. You can try out your player with alternative maps
+        using the <i>-map</i> option. This option requires the name of a text file containing a map description. To run a match with an alternative map, you can use a command like:
+    </p>
+    <p>
+        <pre>java -jar coderunner.jar -player java Lucy -player cpp bill -map maps/map2.txt</pre>
+    </p>
+
+    <p>
+        The game distribution binary contains a few sample maps, and
+        additional maps will be used during the preliminary matches
+        and the final tournament.  Of course, you can create maps of
+        your own to try out your player.  The format of a map file is
+        almost the same as the initial map description sent to the
+        player.  It starts with
+        a <i>16</i>-by-<i>25</i> grid of
+        characters representing the initial map.  The <i>respawn cell</i> for
+        the red and blue players is indicated by the letters 'R' and
+        'B'.  The map is followed by a list of descriptions of half of
+        the enemies.  For each enemy on the list, the game will
+        automatically create another enemy that is symmetric about the
+        vertical center of the map.
+    </p>
+
+<h2>Player Output</h2>
+    <p>
+        The player uses standard input and standard output to interact
+        with the game, so these streams can't be used to produce
+        debugging output from the player.  However, any player output
+        that's sent to standard error will be printed to the console
+        during execution.  You can use standard error to find out more
+        about what's going on inside your player, without the game
+        thinking you are trying to make a move.
+    </p>
+
+<h2>Synchronous Operation</h2>
+    <p>
+        For debugging, players can be started in synchronous mode. This forces the game engine to wait for every move from
+        the player before simulating the next game turn. The following table shows the variants of the <i>-player</i> option
+        that can be used to request synchronous operation with a particular player.
+    </p>
+
+<table border=1>
+    <tr><td>Real-Time Response</td><td>Synchronous Mode</td></tr>
+    <tr><td>-player java</td><td>-player syncjava</td></tr>
+    <tr><td>-player cpp</td><td>-player synccpp</td></tr>
+    <tr><td>-player pipe</td><td>-player syncpipe</td></tr>
+</table>
+
+</body></html>

@@ -1,0 +1,168 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <title>2013 ICPC Challenge</title>
+</head>
+<body>
+
+<h1>2013 ICPC Challenge</h1>
+    <p>
+        The ICPC Challenge gives programming teams and their coaches a chance to work on a different kind of
+        problem. Working with their coach, teams implement a player and compete against other teams' players
+        in a new game called <i>CodeRunner</i>. Preliminary matches during the two-week coding phase will let teams
+        know how well their players are doing. A final double-elimination competition among all the submitted
+        players will decide whose player is the best.
+    </p>
+    <p>
+        Coding and preliminary matches will run from the start of the UTC day on <b>June 3</b> to the end
+        of the UTC day on <b>June 16</b>. World Finals teams can work on developing their players, submit
+        preliminary player versions, compete in matches against other teams' players and see how their strategy
+        compares. After the coding phase ends, a tournament among the latest versions of all teams' players will
+        be presented as part of the 2013 ICPC World Finals events in Saint Petersburg.
+    </p>
+    <p>
+        <ul>
+            <li><a href="overview.html">Competition overview</a></li>
+            
+            <li><a href="rules.html">Game rules</a></li>
+            <li><a href="examples.html">Example players</a></li>
+            <li><a href="environment.html">Player execution environment</a></li>
+            <li><a href="usage.html">Game usage instructions</a></li>
+            <li><a href="competition.html">Competition model</a></li>
+            <li><a href="http://icpc.baylor.edu/private/survey/World-Finals-2013/submit">Player Submission System</a></li>
+        </ul>
+    </p>
+
+<h2><i>CodeRunner</i></h2>
+
+<p>
+The 2013 ICPC Challenge game, <i>CodeRunner</i>, has a playing field that
+looks something like the following figure.  A red player and a blue
+player compete to collect gold, while avoiding several enemies that
+are moving around the map.  Each player directly controls a single
+runner character, who can move left and right, climb up and down
+ladders and break temporary holes in the floor with a large hammer.  In
+addition to collecting gold, players earn points by exploring the map
+and trapping enemies and their opponent in holes.
+The <a href="rules.html">game rules</a> describe how to examine the
+state of the map and control the runner.  All you have to do is figure
+out how to win.
+</p>
+
+<img src="images/game.png" alt="Illustration of the game" width=800
+height=600/>
+
+<h2>Writing your Player</h2>
+    <p>
+        Your player will be implemented as a stand-alone program in C++ or Java. You will interact with the game
+        by reading information about the game world from standard input and writing your next move to standard
+        output. The sample players can be a quick way for you to get started writing your player and interacting
+        with the game. A more detailed description of the execution environment explains the input and output format
+        for your player as well as other rules for what your player can do.
+    </p>
+
+<h2>Running a Match</h2>
+    <p>
+        Once you have a player written, you can run it by starting up the game and pointing it to your player's
+        executable. If you have written a player in C++, you can run it against the sample Java player using a
+        command like:
+    </p>
+    <p>
+        <pre>java -jar coderunner.jar -player cpp myPlayer -player java -cp java_example GoToNearestGoldPlayer</pre>
+    </p>
+    <p>
+        If your player is implemented in Java, you can run it against the example player using a command like:
+    </p>
+    <p>
+        <pre>java -jar coderunner.jar -player java -cp java_example GoToNearestGoldPlayer -player java MyPlayer</pre>
+    </p>
+    <p>
+        The more detailed usage instructions describe more options for starting up the game, including how to capture a match
+        as a trace file, how to debug your player during execution, etc.
+    </p>
+
+<h2>Submitting your Player</h2>
+    <p>
+        During the coding phase of the competition, players can access the competition through the ICPC Challenge site
+        at: <a href="http://icpc.baylor.edu/challenge/">http://icpc.baylor.edu/challenge/</a> From this page, participants
+        will be able to <a href="http://icpc.baylor.edu/private/survey/World-Finals-2013/submit">login to the
+        submission system</a>, submit player code, and see how they are doing in preliminary matches. The latest working
+        submission is considered the participant's current player. The final tournament and the nightly preliminary matches
+        will use the most recently submitted player code that successfully builds.
+    </p>
+    <p>
+        All source code and supporting files for a player must be submitted at the same time. From the submission
+        interface, select each source file that's part of your player, and then press the "Upload Files" button to
+        upload the whole thing. If you forget to submit an important file, you will need to re-submit everything
+        to have a working player.
+    </p>
+
+<h2>Additional Information</h2>
+    <p>
+        The ICPC Challenge website, <a href="http://icpc.baylor.edu/challenge/">http://icpc.baylor.edu/challenge/</a>,
+        will provide regularly updated information during the coding phase of the competition. If corrections or
+        clarifications are needed, they will be linked from here.
+    </p>
+
+</body></html>

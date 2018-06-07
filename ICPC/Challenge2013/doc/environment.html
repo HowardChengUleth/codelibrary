@@ -1,0 +1,337 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <title>2013 ICPC Challenge Player Execution Environment</title>
+</head>
+<body>
+
+<h1>Player/Game Interface</h1>
+    <p>
+        Player implementations are external to the game itself. A player is a separate executable that
+        communicates with the game via standard input and standard output. The player is executed when
+        the game starts up and continues running until the game is finished. At the start of the game,
+        the game engine sends each player a description of the initial game state. At the start of each
+        turn, the game engine sends the player a description of the current game state. The player reads
+        this description from standard input, chooses a move for the <i>Runner</i> and sends it back by writing
+        it to standard output.
+    </p>
+
+<h2>Initial World Description</h2>
+    <p>
+        At the start of the game each player gets an initial
+        description of the game world. This is sent to players only one
+        time.  The following figure illustrates the organization of
+        the initial world description.
+
+        <table border=1>
+            <tr><td>
+                [<i>turns</i> - number of turns of the game]<br>
+                [row <i>0</i> of the game field]<br>
+                [row <i>1</i> of the game field]<br>
+                ...<br>
+                [row <i>15</i> of the game field]<br>
+                [row of initial position of player’s runner] [column of initial position of player’s runner]<br>
+                [row of initial position of opponent’s runner] [column of initial position of opponent’s runner]<br>
+                [<i>n</i> - number of enemies]<br>
+                [row of initial position of <i>1</i>-st enemy] [column of initial position of <i>1</i>-st enemy] [program of <i>1</i>-st enemy]<br>
+                [row of initial position of <i>2</i>-nd enemy] [column of initial position of <i>2</i>-nd enemy] [program of <i>2</i>-nd enemy]<br>
+                ...<br>
+                [row of initial position of <i>n</i>-th enemy] [column of initial position of <i>n</i>-th enemy] [program of enemy <i>n</i>-th]<br>
+            </td></tr>
+        </table>
+    </p>
+
+    <p>
+        The first line of input contains a integer, <i>turns</i>.
+        Games can vary in length, and this integer tells the player
+        how long the game will be.  The value of turns will always be
+        between <i>400</i> and <i>1200</i> (inclusive).
+    </p>
+    <p>
+        The next <i>16</i> lines each consist
+        of <i>25</i> characters.  This is the game map
+        description. Each character of the map may be one of the
+        following:
+    </p>
+    <p>
+        <table border=1>
+            <tr><td>. (ASCII code 46)</td><td><b>Empty</b></td></tr>
+            <tr><td>= (ASCII code 61)</td><td><b>Ladder</b></td></tr>
+            <tr><td>H (ASCII code 72)</td><td><b>Brick</b></td></tr>
+            <tr><td>* (ASCII code 42)</td><td><b>Gold</b></td></tr>
+            <tr><td>- (ASCII code is 45)</td><td><b>Removed_Brick</b></td></tr>
+        </table>
+    </p>
+    <p>
+        The next two lines contain runners’ initial positions, each
+        given as a row number followed by a column number.  This is
+        followed by a non-negative integer, <i>n</i> giving the number
+        of enemies on the map.  The next <i>n</i> lines each give the
+        row and column of an enemy's initial position, followed by
+        that enemy's <i>program</i>.
+    </p>
+    <p>
+        An enemy's <i>program</i> is a string of characters consisting
+        of ‘R’ (for the <b>Right</b> action), ‘L’ (for the <b>Left</b>
+        action), ‘B’ (for the <b>Bottom</b> action) and ‘T’ (for the
+        <b>Top</b> action).  As described in
+        the <a href="rules.html#enemies">Enemy Behavior</a> section of
+        the rules, this sequence of actions describes how the enemy
+        will move while they are patrolling the map.
+    </p>
+    <p>
+        All row and column values are given as integers, and the upper
+        left corner of the map is at row zero and column zero.
+    </p>
+
+<h2>Per-Turn Game State Snapshot</h2>
+    <p>
+        At the start of each turn (including turn 0), the game sends a description of the
+        current game state to each player.  The following figure
+        illustrates the organization of this game state description.
+    </p>
+
+        <table border=1>
+            <tr><td>
+                [<i>turn</i> - number of the current turn]<br>
+                [row <i>0</i> of the game field]<br>
+                [row <i>1</i> of the game field]<br>
+                ...<br>
+                [row <i>15</i> of the game field]<br>
+                [row of position of player’s runner] [column of position of player’s runner] [player’s score] [dig delay for player’s runner]<br>
+                [row of position of opponent’s runner] [column of position of opponent’s runner] [opponent’s score] [dig delay for opponent’s runner]<br>
+                [row of position of <i>1</i>-st enemy] [column of position of <i>1</i>-st enemy] [master of <i>1</i>-st enemy]<br>
+                [row of position of <i>2</i>-nd enemy] [column of position of <i>2</i>-nd enemy] [master of <i>2</i>-nd enemy]<br>
+                ...<br>
+                [row of position of <i>n</i>-th enemy] [column of position of <i>n</i>-th enemy] [master of <i>n</i>-th enemy]<br>
+            </td></tr>
+        </table>
+
+    <p>
+        The game state description starts with a line containing an
+        integer, <i>t</i>, indicating the current turn number. This
+        value will normally start at zero and increment
+        to <i>turns-1</i> as the game progresses. When the game is
+        over, a value of <i>-1</i> is sent to the player to indicate
+        that no more game states will follow. At this point, the
+        player should exit.
+    </p>
+    <p>
+        The next <i>16</i> lines give a description of
+        the current state of the game map, in the same format as the
+        map in the initial world description.
+    </p>
+
+    <p>
+        The next two lines contain descriptions of the state of the
+        two players, first the current player and then the opponent.
+        Each of these lines starts with the row and column location of
+        the player's runner.  This is followed by the current score
+        for the player, and the next value is an integer indicating
+        the number of turns the player must wait before being able to
+        perform <b>Dig_Left</b> or <b>Dig_Right</b>.  If this value is zero,
+        the runner may destroy a brick in the current turn.
+    </p>
+    <p>
+      The next <i>n</i> lines give the current locations and color of the <i>master</i> of each of
+      the enemies. The enemy positions are in the same order and in the same format as in the
+      initial world description. The <i>master</i> of an enemy
+      indicates the color of the last runner to kill that particular
+      enemy. The value of <i>master</i> can be equal
+      to <i>0</i>, <i>1</i> or <i>-1</i>. A value <i>0</i>
+	  indicates that the current player is the enemy's master, a
+      value of <i>1</i> indicates that the opponent player is the
+      master, and a value of 
+	  <i>-1</i> indicates that the enemy doesn't have a master.
+      </p>
+    <p>
+        If a player or an enemy has been killed, its position is
+        reported as &quot;<i>-1 -1</i>&quot; until it respawns.
+        Initial positions are always legal positions on the map, so no
+        player or enemy will have &quot;<i>-1 -1</i>&quot; as its
+        initial position.
+    </p>
+
+<h2>Player Output Format</h2>
+    <p>
+        At each turn a player must output a single line containing the
+        desired move for the runner.  Valid values for the move are:
+        NONE, TOP, BOTTOM, LEFT, RIGHT, DIG_LEFT or DIG_RIGHT.  Any
+        invalid move will be interpreted as NONE by the game. Note
+        that a player must output exactly one word at each move.  If
+        the player's runner is dead, the player must still print a
+        move to standard output.  The game will just interpret all
+        moves as NONE until the player's runner is respawned.
+    </p>
+
+<h2>Real-Time Response Requirement</h2>
+    <p>
+        After a snapshot of the game state is sent, the player
+        generally has only <i>120</i> milliseconds to
+        respond with a move. The first move is an exception. The
+        player has a full second to respond with its first move. The
+        additional time for the first move reflects the need to give
+        languages like Java an opportunity to demand-load code used by
+        the player. This can cause the first move to take longer than
+        subsequent moves.
+    </p>
+    <p>
+        If the player fails to respond or if the response is received
+        too late, the game will assign the NONE action to
+        the player’s <i>Runner</i>. The game expects to receive a move for each state that is sent to a player, but the game
+        engine does not maintain a queue of game states on behalf of each player. If a player falls behind in parsing
+        game states and responding with a desired move, the engine will discard, rather than queue, subsequent states
+        for the player. A player that is too slow to respond will receive a sampling of the states, and the value of
+        the turn number will indicate that one or more states have been dropped.
+    </p>
+    <p>
+        At the end of the game, a report is printed to standard output indicating any game states that were discarded
+        without being sent to each player. Likewise, a list is printed reporting any moves that were not received from
+        the player in time.
+    </p>
+
+<h2>Player-Centric Encoding</h2>
+    <p>
+        Communication with the player is encoded so that both players
+        can be written as if they control the red player, player zero.  Internally,
+        the first player specified at startup is actually the red
+        player. For communication with the second player, colors are
+        flipped and the order of runners in the initial game state and
+        the per-turn snapshots are reversed.  This way any player
+        can be written as if it is controlling the red player.
+    </p>
+
+<h2>Player Debugging</h2>
+    <p>
+        Your player's standard output is used to communicate with the game engine. While developing your player, you
+        will want to send any debugging output you need to standard error rather than standard output, so that the game
+        engine doesn't think it's part of your move.
+    </p>
+    <p>
+        As described in the usage instructions, the game engine can operate synchronously with the player, waiting
+        indefinitely for each move before performing the next simulation step. This lets the developer suspend the real-time
+        response requirement during debugging. The game engine can also be configured to dump game state and player move
+        information for every turn in a game. This can let the developer inspect the sequence of messages exchanged between
+        game and player after a game is completed.
+    </p>
+
+<h2>Frame Interpolation</h2>
+    <p>
+        A game turn occurs every <i>120</i>
+        milliseconds. The <i>120</i> milliseconds delay is
+        intended to give the player an adequate time to select a next
+        move. However, displaying animation frames at this framerate
+        yields a jumpy visualization. To help smooth things out, the
+        game engine computes additional, intermediate states for
+        animation. These are apparent when visualizing a live game and
+        they affect the contents of the trace file when a game is
+        recorded for later playback. The intermediate states between
+        turns are only part of the animation of the game.  They do
+        show up in the game trace files, but they are not intended to
+        affect how players operate or the game states seen by players
+        at the start of a turn.
+    </p>
+
+<h2>Tournament Execution Environment</h2>
+    <p>
+        Once you have a working player, you will want to submit it to the ICPC Challenge site to see how it does against
+        real opponents. For preliminary matches and for the final tournament, player code will be compiled and will run
+        on a virtual machine running on a <i>3.0 Ghz Xeon</i> processor installed with <i>Ubuntu 12.04 Linux</i>. Players in C++ will be
+         compiled with G++ version <i>4.6.3</i>. Players coded in Java will be compiled and run with <i>Oracle JDK 1.7.0_09</i>.
+    </p>
+    <p>
+        During matches, player code will have uncontested use of a single core and <i>1 GB</i> of physical memory, except for
+        the overhead associated with the operating system and the virtual machine environment. During execution, player
+        submissions will be permitted to read from standard input and write to standard output and standard error. They
+        may also open files in the current directory for reading and even create new threads. Attempts to access other
+        system resources (e.g., read from files elsewhere, create network connections, start new processes) may result
+        in disqualification.
+    </p>
+
+<h2>Player Operation and Organization</h2>
+    <p>
+        Source code for a player may consist of multiple files, but all files must reside in a single directory. Java
+        implementations should place all classes in the default package.
+    </p>
+    <p>
+        Submissions can include source files and data files supporting the player, but the submission for a single player
+        cannot exceed <i>256 kilobytes</i> in total size and <i>50</i> individual files. During execution, the player's source
+        code and any other submitted files will be available in the current directory.
+    </p>
+    <p>
+        For C/C++ submissions, all files ending in <i>.cpp</i> will be compiled and linked together into an executable. During
+        compilation, the submission directory will be the current directory. Player code will be compiled with the <i>-O</i>
+        option and will be linked with <i>-lpthread</i>.
+    </p>
+    <p>
+        For Java submissions, all files ending in <i>.java</i> will be compiled. Only one main function is expected in the
+        resulting classes, and that class will be executed as the player.
+    </p>
+    <p>
+        Submission language is determined by the file name extensions used in the submission. Submissions that appear
+        to contain a mixture of languages (e.g., some files ending in <i>.java</i> and some in <i>.cpp</i>) will be considered
+        invalid, as will submissions do not compile or do not have a single entry point.
+    </p>
+
+</body></html>

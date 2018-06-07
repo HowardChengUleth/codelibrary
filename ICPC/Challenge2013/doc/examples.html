@@ -1,0 +1,132 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <title>2013 ICPC Challenge Example Players </title>
+</head>
+<body>
+
+<h1>Example Players</h1>
+    <p>
+        In the distribution binary, the <i>c++_example</i> and <i>java_example</i> directories contain sample players
+        implemented in C++ and Java. The source code for these demonstrates how a player is to interact
+        with the game, and they may give you some ideas about how your own player could operate. Of course,
+        these players are not too smart. Using them as a starting point, you can probably do much better.
+    </p>
+    <p>
+        You can compile these players independently and then run them
+        against each other in the game using a command like the
+        following. If you've compiled the example players, and left
+        their executables in the same directories as the source code,
+        you should be able to run this command from the top-level
+        directory of the expanded game 
+        
+        distribution binary
+        
+        :
+    </p>
+    <p>
+        <pre>java -jar coderunner.jar -player cpp c++_example/runAndDig -player java -cp java_example GoToNearestGoldPlayer</pre>
+    </p>
+    <p>
+        Source code for the Java player is stored in a java_example subdirectory, but its code is defined in the
+        default package. The <i>-cp java_example</i> on the command line adds <i>java_example</i> to the class path before
+        running this player. If you put your Java player in the current directory, you won't need the <i>-cp</i> option.
+    </p>
+
+<h2>C++ Example Player</h2>
+    <p>
+        For each turn, the C++ sample player, <i>runAndDig.cpp</i>
+        first determines which directions it can move.  Then, it
+        randomly chooses a direction, preferring to move to cells that
+        it hasn't visited recently.  As it moves, the player turns
+        away from nearby enemies and creates a hole for the enemy to
+        fall into if there's an opportunity.
+    </p>
+
+    <ul>
+        <li>
+            <a href="../c++_example/runAndDig.cpp">runAndDig.cpp</a> :
+            source code for the cpp example player.
+        </li>
+    </ul>
+
+<h2>Java Example Player</h2>
+    <p>
+        The Java sample player, <i>GoToNearestGoldPlayer</i>, simply
+        calculates distances to all cells on the map containing
+        <b>Gold</b>.  It chooses the nearest one and goes toward it.
+        For calculating distances and choosing movement direction,
+        this player uses a breadth-first search of the map, based on
+        the rules for player movement.  This player never tries to
+        destroy bricks, and it doesn't try to avoid enemies.
+    </p>
+
+    <ul>
+        <li>
+            <a href="../java_example/GoToNearestGoldPlayer.java">GoToNearestGoldPlayer.java</a> : Main file for the Java
+            player.
+        </li>
+    </ul>
+
+</body></html>

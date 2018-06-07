@@ -1,0 +1,5 @@
+globals.o: globals.cpp globals.h classes.h
+classes.o: classes.cpp globals.h classes.h util.h
+util.o: util.cpp globals.h classes.h util.h
+uleth.o: uleth.cpp util.h globals.h classes.h heuristics.h \
+ ClosestGoldLookahead.hh

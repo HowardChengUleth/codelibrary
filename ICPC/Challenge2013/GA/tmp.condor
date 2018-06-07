@@ -1,0 +1,11 @@
+Universe     = vanilla
+Executable   = run_generation.sh
+Output       = /dev/null
+Error        = /home/cheng/contest/algorithms/acmgroup/Challenge/GA/e/e.$(Process)
+Log          = /dev/null
+Notification = Never
+Requirements = (Memory > 1600) && (Machine != "53obiwan.cs.uleth.ca") && (Machine != "53stass.cs.uleth.ca") && (Machine != "53chewy.cs.uleth.ca") && (Machine != "35tyrol.cs.uleth.ca") && (Machine != "35sulu.cs.uleth.ca") && (Machine != "35cottle.cs.uleth.ca") && (Machine != "hera.cs.uleth.ca") && (Machine != "53ackbar.cs.uleth.ca") && (Machine != "53dooku.cs.uleth.ca") && (Machine != "35picard.cs.uleth.ca") && (Machine != "nox1.cs.uleth.ca") && (Machine != "53maul.cs.uleth.ca") && (Machine != "35gaeta.cs.uleth.ca") && (Machine != "35odo.cs.uleth.ca") && (Machine != "35thrace.cs.uleth.ca") && (Machine != "53anakin.cs.uleth.ca") && (Machine != "53greedo.cs.uleth.ca") && (Machine != "53malak.cs.uleth.ca")
+
+Arguments    = $(Process)
+
+queue 630

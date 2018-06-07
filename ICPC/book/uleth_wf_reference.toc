@@ -1,0 +1,70 @@
+\contentsline {section}{\numberline {1}Geometry}{2}
+\contentsline {subsection}{2D Geometry routines}{2}
+\contentsline {subsection}{3D Geometry routines}{3}
+\contentsline {subsection}{Delauney Triangulation}{4}
+\contentsline {subsection}{Great Circle Distance}{5}
+\contentsline {subsection}{Heron's Triangle Formula}{5}
+\contentsline {subsection}{Area of Union of Rectangles}{5}
+\contentsline {subsection}{Integer 2D Geometry}{5}
+\contentsline {section}{\numberline {2}Number Theory}{6}
+\contentsline {subsection}{Chinese Remainder Theorem}{6}
+\contentsline {subsection}{Discrete Log Solver}{6}
+\contentsline {subsection}{Euler Phi Function}{6}
+\contentsline {subsection}{Exponentiation Mod m}{6}
+\contentsline {subsection}{Extended Euclidean Algorithm}{6}
+\contentsline {subsection}{Large Primality Testing / Factor Large Numbers}{6}
+\contentsline {section}{\numberline {3}Big Integer}{7}
+\contentsline {subsection}{Big Integers}{7}
+\contentsline {section}{\numberline {4}Dynamic Programming}{8}
+\contentsline {subsection}{Longest Increasing Subsequence}{8}
+\contentsline {subsection}{Longest Palindrome Substring}{8}
+\contentsline {section}{\numberline {5}Graph Theory \nobreakspace {}\nobreakspace {} (Directed$^{*}$\nobreakspace {}\nobreakspace {} or \nobreakspace {}\nobreakspace {} Undirected$^{**}$\nobreakspace {}\nobreakspace {} or \nobreakspace {}\nobreakspace {} Both$^{***}$)}{8}
+\contentsline {subsection}{General Graph Layout}{8}
+\contentsline {subsection}{Bellman-Ford Algorithm $^{***}$}{9}
+\contentsline {subsection}{Biconnected Components $^{**}$}{9}
+\contentsline {subsection}{Dijkstra's Algorithm for Sparse Graphs $^{***}$}{9}
+\contentsline {subsection}{Eulerian Tour $^{***}$}{9}
+\contentsline {subsection}{Floyd's Algorithm with Path finding $^{***}$}{10}
+\contentsline {subsection}{Hungarian Algorithm $^{*}$}{10}
+\contentsline {subsection}{Least Common Ancestor $^{*}$}{11}
+\contentsline {subsection}{Bipartite Matching $^{**}$}{11}
+\contentsline {subsection}{General Graph Matching $^{**}$}{11}
+\contentsline {subsection}{Min-Cost Max-Flow for Dense Graphs $^{***}$}{12}
+\contentsline {subsection}{Min-Cost Max-Flow for Sparse Graphs $^{***}$}{12}
+\contentsline {subsection}{Minimum Cut of a Graph $^{**}$}{13}
+\contentsline {subsection}{Minimum Spanning Tree $^{**}$}{13}
+\contentsline {subsection}{Network Flow $O(fm)$ $^{***}$}{13}
+\contentsline {subsection}{Network Flow $O(n^3)$ $^{***}$}{14}
+\contentsline {subsection}{Strongly Connected Components $^{*}$}{14}
+\contentsline {subsection}{2-SAT $^{*}$}{15}
+\contentsline {subsection}{Topological Sort $^{*}$}{15}
+\contentsline {subsection}{Tree Distances $^{**}$}{15}
+\contentsline {section}{\numberline {6}Linear Algebra}{15}
+\contentsline {subsection}{System of Linear Diophantine Equations}{15}
+\contentsline {subsection}{Fraction Free Linear Solve}{16}
+\contentsline {subsection}{LU-Decomposition}{16}
+\contentsline {section}{\numberline {7}Data Structures}{17}
+\contentsline {subsection}{Fraction Class}{17}
+\contentsline {subsection}{Union Find}{17}
+\contentsline {subsection}{Date Class}{17}
+\contentsline {subsection}{Range Maximum Query}{18}
+\contentsline {subsection}{Minimum/Maximum Value of Set of Linear Lines}{18}
+\contentsline {section}{\numberline {8}String Processing}{19}
+\contentsline {subsection}{KMP}{19}
+\contentsline {subsection}{Suffix Array}{19}
+\contentsline {section}{\numberline {9}Game Theory}{20}
+\contentsline {subsection}{Alpha-Beta Pruning}{20}
+\contentsline {section}{\numberline {10}Algorithms and Misc}{20}
+\contentsline {subsection}{Cubic Polynomial Solver}{20}
+\contentsline {subsection}{Hashing Custom Types}{20}
+\contentsline {subsection}{Infix Evaluations}{20}
+\contentsline {subsection}{Josephus Problem}{21}
+\contentsline {subsection}{Polynomial Multiplication using FFT}{21}
+\contentsline {subsection}{Conversion to and from Roman Numerals}{21}
+\contentsline {subsection}{Simpson's Rule}{21}
+\contentsline {subsection}{Rubik's Cube}{22}
+\contentsline {subsection}{Simplex Algorithm}{22}
+\contentsline {section}{\numberline {11}Formulas}{22}
+\contentsline {subsubsection}{\numberline {11.0.1}Physics}{23}
+\contentsline {subsection}{\numberline {11.1}Rotating Calipers}{23}
+\contentsline {section}{\numberline {12}Tips}{24}

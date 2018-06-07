@@ -1,0 +1,631 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.11.25)  10 NOV 2015 14:03
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**uleth_wf_reference
+(./uleth_wf_reference.tex
+LaTeX2e <2014/05/01>
+Babel <3.9l> and hyphenation patterns for 79 languages loaded.
+
+(/net/venus/spare/ROOT/usr/local/texlive/2014/texmf-dist/tex/latex/base/article
+.cls
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+
+(/net/venus/spare/ROOT/usr/local/texlive/2014/texmf-dist/tex/latex/base/size10.
+clo
+File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/net/venus/spare/ROOT/usr/local/texlive/2014/texmf-dist/tex/latex/amsmath/amsm
+ath.sty
+Package: amsmath 2013/01/14 v2.14 AMS math features
+\@mathmargin=\skip43
+
+For additional information on amsmath, use the `?' option.
+
+(/net/venus/spare/ROOT/usr/local/texlive/2014/texmf-dist/tex/latex/amsmath/amst
+ext.sty
+Package: amstext 2000/06/29 v2.01
+
+(/net/venus/spare/ROOT/usr/local/texlive/2014/texmf-dist/tex/latex/amsmath/amsg
+en.sty
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks14
+\ex@=\dimen103
+))
+(/net/venus/spare/ROOT/usr/local/texlive/2014/texmf-dist/tex/latex/amsmath/amsb
+sy.sty
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen104
+)
+(/net/venus/spare/ROOT/usr/local/texlive/2014/texmf-dist/tex/latex/amsmath/amso
+pn.sty
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count87
+LaTeX Info: Redefining \frac on input line 210.
+\uproot@=\count88
+\leftroot@=\count89
+LaTeX Info: Redefining \overline on input line 306.
+\classnum@=\count90
+\DOTSCASE@=\count91
+LaTeX Info: Redefining \ldots on input line 378.
+LaTeX Info: Redefining \dots on input line 381.
+LaTeX Info: Redefining \cdots on input line 466.
+\Mathstrutbox@=\box26
+\strutbox@=\box27
+\big@size=\dimen105
+LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
+\macc@depth=\count92
+\c@MaxMatrixCols=\count93
+\dotsspace@=\muskip10
+\c@parentequation=\count94
+\dspbrk@lvl=\count95
+\tag@help=\toks15
+\row@=\count96
+\column@=\count97
+\maxfields@=\count98
+\andhelp@=\toks16
+\eqnshift@=\dimen106
+\alignsep@=\dimen107
+\tagshift@=\dimen108
+\tagwidth@=\dimen109
+\totwidth@=\dimen110
+\lineht@=\dimen111
+\@envbody=\toks17
+\multlinegap=\skip44
+\multlinetaggap=\skip45
+\mathdisplay@stack=\toks18
+LaTeX Info: Redefining \[ on input line 2665.
+LaTeX Info: Redefining \] on input line 2666.
+)
+(/net/venus/spare/ROOT/usr/local/texlive/2014/texmf-dist/tex/latex/pslatex/psla
+tex.sty
+Package: pslatex 1996/07/24 v1.2 pslatex emulation (DPC)
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 65.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> OT1/ptmcm/m/n on input line 65.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/ptmcm/m/n on input line 65.
+LaTeX Font Info:    Redeclaring symbol font `letters' on input line 66.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
+(Font)                  OML/cmm/m/it --> OML/ptmcm/m/it on input line 66.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/cmm/b/it --> OML/ptmcm/m/it on input line 66.
+LaTeX Font Info:    Redeclaring symbol font `symbols' on input line 67.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/cmsy/m/n --> OMS/pzccm/m/n on input line 67.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/cmsy/b/n --> OMS/pzccm/m/n on input line 67.
+LaTeX Font Info:    Redeclaring symbol font `largesymbols' on input line 68.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/cmex/m/n --> OMX/psycm/m/n on input line 68.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/cmex/m/n --> OMX/psycm/m/n on input line 68.
+\symbold=\mathgroup4
+\symitalic=\mathgroup5
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 74.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> OT1/ptm/bx/n on input line 74.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/ptm/bx/n on input line 74.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 75.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> OT1/ptm/m/it on input line 75.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> OT1/ptm/m/it on input line 75.
+)
+(/net/venus/spare/ROOT/usr/local/texlive/2014/texmf-dist/tex/latex/amsfonts/ams
+symb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(/net/venus/spare/ROOT/usr/local/texlive/2014/texmf-dist/tex/latex/amsfonts/ams
+fonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup6
+\symAMSb=\mathgroup7
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+(/net/venus/spare/ROOT/usr/local/texlive/2014/texmf-dist/tex/latex/base/latexsy
+m.sty
+Package: latexsym 1998/08/17 v2.2e Standard LaTeX package (lasy symbols)
+\symlasy=\mathgroup8
+LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
+(Font)                  U/lasy/m/n --> U/lasy/b/n on input line 47.
+)
+(/net/venus/spare/ROOT/usr/local/texlive/2014/texmf-dist/tex/latex/amscls/amsth
+m.sty
+Package: amsthm 2009/07/02 v2.20.1
+\thm@style=\toks19
+\thm@bodyfont=\toks20
+\thm@headfont=\toks21
+\thm@notefont=\toks22
+\thm@headpunct=\toks23
+\thm@preskip=\skip46
+\thm@postskip=\skip47
+\thm@headsep=\skip48
+\dth@everypar=\toks24
+) (/home/cheng/tex/tools/enumerate.sty
+Package: enumerate 1999/03/05 v3.00 enumerate extensions (DPC)
+\@enLab=\toks25
+)
+(/net/venus/spare/ROOT/usr/local/texlive/2014/texmf-dist/tex/latex/graphics/col
+or.sty
+Package: color 2014/10/28 v1.1a Standard LaTeX Color (DPC)
+
+(/net/venus/spare/ROOT/usr/local/texlive/2014/texmf-dist/tex/latex/latexconfig/
+color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package color Info: Driver file: pdftex.def on input line 137.
+
+(/net/venus/spare/ROOT/usr/local/texlive/2014/texmf-dist/tex/latex/pdftex-def/p
+dftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+ (/home/cheng/tex/infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+) (/home/cheng/tex/ltxcmds.sty
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count99
+))
+(/net/venus/spare/ROOT/usr/local/texlive/2014/texmf-dist/tex/latex/listings/lis
+tings.sty
+(/net/venus/spare/ROOT/usr/local/texlive/2014/texmf-dist/tex/latex/graphics/key
+val.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks26
+)
+\lst@mode=\count100
+\lst@gtempboxa=\box28
+\lst@token=\toks27
+\lst@length=\count101
+\lst@currlwidth=\dimen112
+\lst@column=\count102
+\lst@pos=\count103
+\lst@lostspace=\dimen113
+\lst@width=\dimen114
+\lst@newlines=\count104
+\lst@lineno=\count105
+\lst@maxwidth=\dimen115
+
+(/net/venus/spare/ROOT/usr/local/texlive/2014/texmf-dist/tex/latex/listings/lst
+misc.sty
+File: lstmisc.sty 2014/09/06 1.5e (Carsten Heinz)
+\c@lstnumber=\count106
+\lst@skipnumbers=\count107
+\lst@framebox=\box29
+)
+(/net/venus/spare/ROOT/usr/local/texlive/2014/texmf-dist/tex/latex/listings/lis
+tings.cfg
+File: listings.cfg 2014/09/06 1.5e listings configuration
+))
+Package: listings 2014/09/06 1.5e (Carsten Heinz)
+ (./multicol.sty
+Package: multicol 2011/06/27 v1.7a multicolumn formatting (FMi)
+\c@tracingmulticols=\count108
+\mult@box=\box30
+\multicol@leftmargin=\dimen116
+\c@unbalance=\count109
+\c@collectmore=\count110
+\doublecol@number=\count111
+\multicoltolerance=\count112
+\multicolpretolerance=\count113
+\full@width=\dimen117
+\page@free=\dimen118
+\premulticols=\dimen119
+\postmulticols=\dimen120
+\multicolsep=\skip49
+\multicolbaselineskip=\skip50
+\partial@page=\box31
+\last@line=\box32
+\mult@rightbox=\box33
+\mult@grightbox=\box34
+\mult@gfirstbox=\box35
+\mult@firstbox=\box36
+\@tempa=\box37
+\@tempa=\box38
+\@tempa=\box39
+\@tempa=\box40
+\@tempa=\box41
+\@tempa=\box42
+\@tempa=\box43
+\@tempa=\box44
+\@tempa=\box45
+\@tempa=\box46
+\@tempa=\box47
+\@tempa=\box48
+\@tempa=\box49
+\@tempa=\box50
+\@tempa=\box51
+\@tempa=\box52
+\@tempa=\box53
+\c@columnbadness=\count114
+\c@finalcolumnbadness=\count115
+\last@try=\dimen121
+\multicolovershoot=\dimen122
+\multicolundershoot=\dimen123
+\mult@nat@firstbox=\box54
+\colbreak@box=\box55
+\multicol@sort@counter=\count116
+)
+(/net/venus/spare/ROOT/usr/local/texlive/2014/texmf-dist/tex/latex/xcolor/xcolo
+r.sty
+Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
+
+(/net/venus/spare/ROOT/usr/local/texlive/2014/texmf-dist/tex/latex/latexconfig/
+color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package xcolor Info: Package option `usenames' ignored on input line 216.
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+LaTeX Info: Redefining \color on input line 702.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1341.
+Package xcolor Info: Model `RGB' extended on input line 1353.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1355.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1356.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1357.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
+
+(/net/venus/spare/ROOT/usr/local/texlive/2014/texmf-dist/tex/latex/graphics/dvi
+psnam.def
+File: dvipsnam.def 2014/10/14 v3.0j Driver-dependent file (DPC,SPQR)
+))
+(/net/venus/spare/ROOT/usr/local/texlive/2014/texmf-dist/tex/latex/preprint/ful
+lpage.sty
+Package: fullpage 1999/02/23 1.1 (PWD)
+\FP@margin=\skip51
+)
+(/net/venus/spare/ROOT/usr/local/texlive/2014/texmf-dist/tex/latex/fancyhdr/fan
+cyhdr.sty
+\fancy@headwidth=\skip52
+\f@ncyO@elh=\skip53
+\f@ncyO@erh=\skip54
+\f@ncyO@olh=\skip55
+\f@ncyO@orh=\skip56
+\f@ncyO@elf=\skip57
+\f@ncyO@erf=\skip58
+\f@ncyO@olf=\skip59
+\f@ncyO@orf=\skip60
+)
+(/net/venus/spare/ROOT/usr/local/texlive/2014/texmf-dist/tex/latex/setspace/set
+space.sty
+Package: setspace 2011/12/19 v6.7a set line spacing
+) (./lstlinebgrd.sty
+Package: lstlinebgrd 2012/05/03 v0.1 Provides 'listings' options to color the b
+ackground of lines
+) (/home/cheng/tex/tools/calc.sty
+Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count117
+\calc@Bcount=\count118
+\calc@Adimen=\dimen124
+\calc@Bdimen=\dimen125
+\calc@Askip=\skip61
+\calc@Bskip=\skip62
+LaTeX Info: Redefining \setlength on input line 76.
+LaTeX Info: Redefining \addtolength on input line 77.
+\calc@Ccount=\count119
+\calc@Cskip=\skip63
+)
+(/net/venus/spare/ROOT/usr/local/texlive/2014/texmf-dist/tex/latex/graphics/gra
+phicx.sty
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/net/venus/spare/ROOT/usr/local/texlive/2014/texmf-dist/tex/latex/graphics/gra
+phics.sty
+Package: graphics 2014/10/28 v1.0p Standard LaTeX Graphics (DPC,SPQR)
+
+(/net/venus/spare/ROOT/usr/local/texlive/2014/texmf-dist/tex/latex/graphics/tri
+g.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/net/venus/spare/ROOT/usr/local/texlive/2014/texmf-dist/tex/latex/latexconfig/
+graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+)
+\Gin@req@height=\dimen126
+\Gin@req@width=\dimen127
+)
+\c@lnum=\count120
+
+(/net/venus/spare/ROOT/usr/local/texlive/2014/texmf-dist/tex/latex/listings/lst
+lang1.sty
+File: lstlang1.sty 2014/09/06 1.5e listings language file
+)
+(/net/venus/spare/ROOT/usr/local/texlive/2014/texmf-dist/tex/latex/listings/lst
+lang1.sty
+File: lstlang1.sty 2014/09/06 1.5e listings language file
+)
+(/net/venus/spare/ROOT/usr/local/texlive/2014/texmf-dist/tex/latex/listings/lst
+misc.sty
+File: lstmisc.sty 2014/09/06 1.5e (Carsten Heinz)
+) (./uleth_wf_reference.aux)
+\openout1 = `uleth_wf_reference.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for OMS/pzccm/m/n on input line 61.
+LaTeX Font Info:    Try loading font information for OMS+pzccm on input line 61
+.
+
+(/net/venus/spare/ROOT/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/omspz
+ccm.fd
+File: omspzccm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/pzccm.
+)
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+
+(/net/venus/spare/ROOT/usr/local/texlive/2014/texmf-dist/tex/context/base/supp-
+pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count121
+\scratchdimen=\dimen128
+\scratchbox=\box56
+\nofMPsegments=\count122
+\nofMParguments=\count123
+\everyMPshowfont=\toks28
+\MPscratchCnt=\count124
+\MPscratchDim=\dimen129
+\MPnumerator=\count125
+\makeMPintoPDFobject=\count126
+\everyMPtoPDFconversion=\toks29
+)
+\c@lstlisting=\count127
+ (/home/cheng/tex/pdftexcmds.sty
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
+)
+ (/home/cheng/tex/ifluatex.sty
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+(/net/venus/spare/ROOT/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/i
+fpdf.sty
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(/net/venus/spare/ROOT/usr/local/texlive/2014/texmf-dist/tex/latex/oberdiek/eps
+topdf-base.sty
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+
+(/net/venus/spare/ROOT/usr/local/texlive/2014/texmf-dist/tex/latex/oberdiek/grf
+ext.sty
+Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
+
+(/net/venus/spare/ROOT/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/k
+vdefinekeys.sty
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+))
+(/net/venus/spare/ROOT/usr/local/texlive/2014/texmf-dist/tex/latex/oberdiek/kvo
+ptions.sty
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+
+(/net/venus/spare/ROOT/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/k
+vsetkeys.sty
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+
+(/net/venus/spare/ROOT/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/e
+texcmds.sty
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.svg,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 452.
+
+(/net/venus/spare/ROOT/usr/local/texlive/2014/texmf-dist/tex/latex/latexconfig/
+epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24.88> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 64.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 74.
+ (./uleth_wf_reference.toc
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1.
+LaTeX Font Info:    Try loading font information for OT1+ptmcm on input line 2.
+
+
+(/net/venus/spare/ROOT/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/ot1pt
+mcm.fd
+File: ot1ptmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ptmcm.
+)
+LaTeX Font Info:    Try loading font information for OML+ptmcm on input line 2.
+
+
+(/net/venus/spare/ROOT/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/omlpt
+mcm.fd
+File: omlptmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ptmcm.
+)
+LaTeX Font Info:    Try loading font information for OMX+psycm on input line 2.
+
+
+(/net/venus/spare/ROOT/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/omxps
+ycm.fd
+File: omxpsycm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/psycm.
+)
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 2.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 2.
+LaTeX Font Info:    Try loading font information for U+msa on input line 2.
+
+(/net/venus/spare/ROOT/usr/local/texlive/2014/texmf-dist/tex/latex/amsfonts/ums
+a.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 2.
+
+(/net/venus/spare/ROOT/usr/local/texlive/2014/texmf-dist/tex/latex/amsfonts/ums
+b.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Try loading font information for U+lasy on input line 2.
+
+(/net/venus/spare/ROOT/usr/local/texlive/2014/texmf-dist/tex/latex/base/ulasy.f
+d
+File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
+))
+\tf@toc=\write3
+\openout3 = `uleth_wf_reference.toc'.
+
+LaTeX Font Info:    Font shape `OT1/pcr/bx/n' in size <7> not available
+(Font)              Font shape `OT1/pcr/b/n' tried instead on input line 77.
+ (./geometry2D.cc
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 10.
+ [1{/net/venus/spare/ROOT/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/upd
+map/pdftex.map}
+
+] [2]) (./geometry3D.cc [3])
+(./delauney_triangulation.cc [4]) (./greatcircle.cc) (./heron.cc)
+(./union_rectangles.cc) (./IntegerGeometry.cc [5]) (./cra.cc)
+(./discrete_log.cc) (./eulerphi.cc) (./expmod.cc) (./euclid.cc)
+(./factor_large.cc [6]) (./bigint.cc [7]) (./asc_subseq.cc) (./manacher.cc)
+(./graph_layout.cc [8]) (./bellmanford.cc) (./bicomp.cc) (./dijkstra_sparse.cc)
+(./eulertour.cc [9]) (./floyd_path.cc) (./hungarian.cc [10]) (./lca.cc)
+(./matching.cc) (./genmatching.cc [11]) (./mincostmaxflowdense.cc)
+(./mincostmaxflowsparse.cc [12]) (./min_cut.cc) (./mst.cc) (./networkflow.cc
+[13]) (./networkflow2.cc) (./scc.cc [14]) (./2sat.cc) (./top_sort.cc)
+(./tree_distance.cc) (./diophantine_sys.c [15]) (./fflinsolve.cc)
+(./linsolve.cc) (./fraction.cc [16]) (./unionfind.cc) (./date.cc [17])
+(./rmq.cc) (./upper_hull.cc [18]) (./kmp.cc) (./suffixarray.cc [19])
+(./alpha_beta.cc) (./cubic.cc) (./hash.cc) (./infix.cc [20]) (./josephus.cc)
+(./poly_mult.cc) (./roman_numerals.cc) (./simpsons_rule.cc [21]) (./rubik.cc)
+(./simplex.cc) [22] <Images/TrigCircle.pdf, id=81, 339.2675pt x 235.88126pt>
+File: Images/TrigCircle.pdf Graphic file (type pdf)
+
+<use Images/TrigCircle.pdf>
+Package pdftex.def Info: Images/TrigCircle.pdf used on input line 193.
+(pdftex.def)             Requested size: 155.91998pt x 108.405pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 243--244
+
+ []
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 247.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 247.
+
+Underfull \hbox (badness 10000) in paragraph at lines 245--257
+[] []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 245--257
+
+ []
+
+<Images/Ellipse.jpg, id=82, 2007.5pt x 1337.99875pt>
+File: Images/Ellipse.jpg Graphic file (type jpg)
+ <use Images/Ellipse.jpg>
+Package pdftex.def Info: Images/Ellipse.jpg used on input line 276.
+(pdftex.def)             Requested size: 135.51572pt x 90.3375pt.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 288.
+LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <9> not available
+(Font)              Font shape `OMS/pzccm/m/n' tried instead on input line 308.
+
+
+[23 <./Images/TrigCircle.pdf> <./Images/Ellipse.jpg>]
+<Images/point_tangent.png, id=93, 252.945pt x 264.23718pt>
+File: Images/point_tangent.png Graphic file (type png)
+
+<use Images/point_tangent.png>
+Package pdftex.def Info: Images/point_tangent.png used on input line 368.
+(pdftex.def)             Requested size: 86.47488pt x 90.3375pt.
+
+<Images/cir_cir_tang.png, id=94, 834.11626pt x 371.3875pt>
+File: Images/cir_cir_tang.png Graphic file (type png)
+
+<use Images/cir_cir_tang.png>
+Package pdftex.def Info: Images/cir_cir_tang.png used on input line 371.
+(pdftex.def)             Requested size: 202.89023pt x 90.3375pt.
+
+<Images/holo_centre.pdf, id=95, 641.39626pt x 379.4175pt>
+File: Images/holo_centre.pdf Graphic file (type pdf)
+
+<use Images/holo_centre.pdf>
+Package pdftex.def Info: Images/holo_centre.pdf used on input line 375.
+(pdftex.def)             Requested size: 183.25003pt x 108.405pt.
+ [24 <./Images/point_tangent.png> <./Images/cir_cir_tang.png>] <Images/power_po
+int.pdf, id=99, 433.62pt x 289.08pt>
+File: Images/power_point.pdf Graphic file (type pdf)
+
+<use Images/power_point.pdf>
+Package pdftex.def Info: Images/power_point.pdf used on input line 381.
+(pdftex.def)             Requested size: 162.6071pt x 108.405pt.
+
+<Images/Inspiration.jpg, id=100, 501.875pt x 640.3925pt>
+File: Images/Inspiration.jpg Graphic file (type jpg)
+
+<use Images/Inspiration.jpg>
+Package pdftex.def Info: Images/Inspiration.jpg used on input line 398.
+(pdftex.def)             Requested size: 73.62387pt x 93.95122pt.
+ [25 <./Images/holo_centre.pdf> <./Images/power_point.pdf> <./Images/Inspiratio
+n.jpg>] (./uleth_wf_reference.aux) ) 
+Here is how much of TeX's memory you used:
+ 6657 strings out of 493109
+ 88879 string characters out of 6127841
+ 869883 words of memory out of 5000000
+ 9794 multiletter control sequences out of 15000+600000
+ 47313 words of font info for 105 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 42i,12n,58p,541b,1903s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/net/venus/spare/ROOT/usr/local/texlive/20
+14/texmf-dist/fonts/enc/dvips/base/8r.enc}</net/venus/spare/ROOT/usr/local/texl
+ive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></net/venus/spare
+/ROOT/usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cmextra/cme
+x9.pfb></net/venus/spare/ROOT/usr/local/texlive/2014/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmmi10.pfb></net/venus/spare/ROOT/usr/local/texlive/2014/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></net/venus/spare/ROOT/usr/local/
+texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></net/venus/s
+pare/ROOT/usr/local/texlive/2014/texmf-dist/fonts/type1/urw/courier/ucrb8a.pfb>
+</net/venus/spare/ROOT/usr/local/texlive/2014/texmf-dist/fonts/type1/urw/courie
+r/ucrr8a.pfb></net/venus/spare/ROOT/usr/local/texlive/2014/texmf-dist/fonts/typ
+e1/urw/symbol/usyr.pfb></net/venus/spare/ROOT/usr/local/texlive/2014/texmf-dist
+/fonts/type1/urw/times/utmb8a.pfb></net/venus/spare/ROOT/usr/local/texlive/2014
+/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></net/venus/spare/ROOT/usr/local/t
+exlive/2014/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on uleth_wf_reference.pdf (25 pages, 841888 bytes).
+PDF statistics:
+ 156 PDF objects out of 1000 (max. 8388607)
+ 103 compressed objects within 2 object streams
+ 0 named destinations out of 1000 (max. 500000)
+ 36 words of extra memory for PDF output out of 10000 (max. 10000000)
+

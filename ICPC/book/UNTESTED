@@ -1,0 +1,11 @@
+I have added the following code to the library:
+
+lca.cc
+simpsons_rule.cc
+fenwick_tree.cc (2D)
+rubik.cc (Sort of tested. Need to make sure it compiles)
+tree_distance.cc
+
+They are currently untested. Please let me know if you test them.
+I am currently trying to just add code now and test later
+(maybe this is a bad idea, but I'm in a coding groove)

@@ -1,0 +1,401 @@
+\documentclass[landscape,10pt]{article}
+%\documentclass[a4paper,landscape,10pt]{article}
+\usepackage{amsmath,pslatex,amssymb,amsfonts,latexsym,amstext,amsmath,amsthm,enumerate,color,listings,multicol}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{fullpage}
+\usepackage{fancyhdr}
+
+\usepackage{setspace}
+\usepackage{lstlinebgrd}
+\usepackage{calc}
+
+\usepackage{graphicx}
+\DeclareGraphicsExtensions{.pdf,.png,.jpg,.svg}
+
+\setcounter{tocdepth}{2}
+%\parskip .2cm
+\renewcommand{\contentsname}{\vspace{-\baselineskip}}
+\newcounter{lnum} 
+\pagestyle{fancy}
+\headheight 35pt
+\rhead{\textbf{\thepage}}
+\lhead{\textbf{University of Lethbridge}}
+\cfoot{}
+\setlength{\voffset}{-0.8in}
+\setlength{\hoffset}{-0.77in}
+\setlength{\headsep}{0.1in}
+\addtolength{\textheight}{1.25in}
+\addtolength{\textwidth}{1.15in}
+\setlength{\columnseprule}{1pt}
+\setlength{\marginparwidth}{20pt}
+\definecolor{light-gray}{gray}{0.90}
+\lstset{
+  language=C++,
+  basicstyle=\scriptsize\ttfamily\bfseries,
+  numbers=none, 
+  numberstyle=\tiny, 
+%  stepnumber=5,
+  linebackgroundcolor={\setcounter{lnum}{\value{lstnumber} / 5} \ifodd \value{lnum} \color{light-gray}\fi},
+  linebackgroundsep={0.11in},
+  keywordstyle=\color{blue}, 
+  commentstyle=\color{red},
+  stringstyle=\ttfamily, % typewriter type for strings
+  frame=bt, 
+  rulesepcolor=\color{red!20!green!20!blue!20},
+  rulecolor=\color{Brown},
+  escapeinside=``, 
+  %xleftmargin=2em,xrightmargin=2em, aboveskip=1em,
+  breaklines=true             % sets automatic line breaking
+}
+
+\title{ACM ICPC World Finals 2014 Code Booklet}
+\author{University of Lethbridge}
+\date{}
+
+\newcommand{\code}[2]{\addcontentsline{toc}{subsection}{#2}\lstinputlisting{#1}}
+\newcommand{\directed}{$^{*}$}
+\newcommand{\undirected}{$^{**}$}
+\newcommand{\both}{$^{***}$}
+\newcommand{\myimage}[2]{\begin{center}\includegraphics[height=#2]{Images/#1}\end{center}}
+
+\begin{document}
+
+\begin{center}
+ {\Huge\bf{ACM ICPC World Finals 2014 Code Booklet}}\\\vskip5pt
+ {\Huge University of Lethbridge}
+\end{center}
+%\maketitle
+\thispagestyle{fancy}
+
+
+\begin{multicols*}{2}
+  \singlespacing
+  \small
+  \tableofcontents
+  
+\section{Geometry}
+  \code{geometry2D.cc}{2D Geometry routines}
+  \code{geometry3D.cc}{3D Geometry routines}
+  \code{delauney_triangulation.cc}{Delauney Triangulation}
+  \code{greatcircle.cc}{Great Circle Distance}
+  \code{heron.cc}{Heron's Triangle Formula}
+  \code{union_rectangles.cc}{Area of Union of Rectangles}
+  \code{IntegerGeometry.cc}{Integer 2D Geometry}
+
+\section{Number Theory}
+  \code{cra.cc}{Chinese Remainder Theorem}
+  \code{discrete_log.cc}{Discrete Log Solver}
+  \code{eulerphi.cc}{Euler Phi Function}
+  \code{expmod.cc}{Exponentiation Mod m}
+  \code{euclid.cc}{Extended Euclidean Algorithm}
+  \code{factor_large.cc}{Large Primality Testing / Factor Large Numbers}
+
+\section{Big Integer}
+  \code{bigint.cc}{Big Integers}
+%  \code{int128.cc}{128-Bit Integers}
+
+\section{Dynamic Programming}
+  \code{asc_subseq.cc}{Longest Increasing Subsequence}
+  \code{manacher.cc}{Longest Palindrome Substring}
+%  \code{vecsum.cc}{Vector Sum}
+  
+\section[Graph Theory ~~ (Directed\directed ~~ or ~~ Undirected\undirected ~~ or  ~~ Both\both)]{Graph Theory}
+  \code{graph_layout.cc}{General Graph Layout}
+  \code{bellmanford.cc}{Bellman-Ford Algorithm \both}
+  \code{bicomp.cc}{Biconnected Components \undirected}
+%  \code{dijkstra.cc}{Dijkstra's Algorithm for Dense Graphs \both}
+  \code{dijkstra_sparse.cc}{Dijkstra's Algorithm for Sparse Graphs \both}
+  \code{eulertour.cc}{Eulerian Tour \both}
+  \code{floyd_path.cc}{Floyd's Algorithm with Path finding \both}
+  \code{hungarian.cc}{Hungarian Algorithm \directed}
+  \code{lca.cc}{Least Common Ancestor \directed}
+  \code{matching.cc}{Bipartite Matching \undirected}
+  \code{genmatching.cc}{General Graph Matching \undirected}
+  \code{mincostmaxflowdense.cc}{Min-Cost Max-Flow for Dense Graphs \both}
+  \code{mincostmaxflowsparse.cc}{Min-Cost Max-Flow for Sparse Graphs \both}
+  \code{min_cut.cc}{Minimum Cut of a Graph \undirected}
+  \code{mst.cc}{Minimum Spanning Tree \undirected}
+  \code{networkflow.cc}{Network Flow $O(fm)$ \both}
+  \code{networkflow2.cc}{Network Flow $O(n^3)$ \both}
+  \code{scc.cc}{Strongly Connected Components \directed}
+  \code{2sat.cc}{2-SAT \directed}
+  \code{top_sort.cc}{Topological Sort \directed}
+  \code{tree_distance.cc}{Tree Distances \undirected}
+
+\section{Linear Algebra}
+  \code{diophantine_sys.c}{System of Linear Diophantine Equations}
+  \code{fflinsolve.cc}{Fraction Free Linear Solve}
+  \code{linsolve.cc}{LU-Decomposition}
+
+\section{Data Structures}
+%  \code{fenwicktree.cc}{Fenwick Tree}
+  \code{fraction.cc}{Fraction Class}
+  \code{unionfind.cc}{Union Find}
+  \code{date.cc}{Date Class}
+  \code{rmq.cc}{Range Maximum Query}
+%  \code{min_queue.cc}{Queue with Minimum Maintained}
+%  \code{priority_queue.cc}{Priority Queue with Handles}
+  \code{upper_hull.cc}{Minimum/Maximum Value of Set of Linear Lines}  
+\section{String Processing}
+  \code{kmp.cc}{KMP}
+%  \code{str_rotation_period.cc}{String Rotation Period}
+  \code{suffixarray.cc}{Suffix Array}
+
+\section{Game Theory}
+  \code{alpha_beta.cc}{Alpha-Beta Pruning}
+
+\section{Algorithms and Misc}
+  \code{cubic.cc}{Cubic Polynomial Solver}
+%  \code{de_bruijn.cc}{De Bruijn Sequences}
+%  \code{frac2dec.cc}{Fraction to Decimal}
+  \code{hash.cc}{Hashing Custom Types}
+  \code{infix.cc}{Infix Evaluations}
+  \code{josephus.cc}{Josephus Problem}
+  \code{poly_mult.cc}{Polynomial Multiplication using FFT}
+  \code{roman_numerals.cc}{Conversion to and from Roman Numerals}
+  \code{simpsons_rule.cc}{Simpson's Rule}
+  \code{rubik.cc}{Rubik's Cube}
+  \code{simplex.cc}{Simplex Algorithm}
+
+\section{Formulas}
+
+%\subsubsection*{Because Darcy is Dumb...}
+
+%$v = \frac{d}{t}$ \hskip20pt $d = vt$ \hskip20pt $t = \frac{d}{v}$
+
+\subsubsection*{Triangles}
+
+\begin{description}
+\item[Sine law:] $\frac{\sin(\alpha)}{a} = \frac{\sin(\beta)}{b} =
+  \frac{\sin(\gamma)}{c}$, $a,b,c$ = side lengths, $\alpha, \beta,
+  \gamma$ = opposite angles.
+\item[Cosine law:] $c^2 = a^2 + b^2 - 2ab\cos(\gamma)$
+\item[Circle inscribed in triangle:] radius = $\sqrt{\frac{(s-a)(s-b)(s-c)}{s}}$,
+  $s = \frac{a+b+c}{2}$.
+\item[Circumcircle:] radius = $\frac{abc}{4A}$, $A$ = area of triangle.
+\end{description}
+
+\subsubsection*{Trig Identities}
+
+\begin{tabbing}
+$\sin^2(u)$ \hskip30pt\=$= \frac12 (1-\cos(2u))$ \hskip70pt \=
+$\cos^2(u)$ \hskip30pt\=$= \frac12 (1+\cos(2u))$ \\
+$\sin(u) + \sin(v) $ \> $= 2\sin\left(\frac{u + v}{2}\right)\cos\left(\frac{u - v}{2}\right)$ \>
+$\sin(u) - \sin(v) $ \> $= 2\sin\left(\frac{u - v}{2}\right)\cos\left(\frac{u + v}{2}\right)$\\
+$\cos(u) + \cos(v) $ \> $= 2\cos\left(\frac{u + v}{2}\right)\cos\left(\frac{u - v}{2}\right)$ \>
+$\cos(u) - \cos(v) $ \> $= -2\sin\left(\frac{u + v}{2}\right)\sin\left(\frac{u - v}{2}\right)$ \\
+$\sin(u)\sin(v) $ \> $= \frac12\left(\cos(u-v) - \cos(u+v)\right)$ \>
+$\cos(u)\cos(v) $ \> $= \frac12\left(\cos(u-v) + \cos(u+v)\right)$\\
+$\sin(u)\cos(v) $ \> $= \frac12\left(\sin(u+v) + \cos(u-v)\right)$ \>
+$\cos(u)\sin(v) $ \> $= \frac12\left(\sin(u+v) - \cos(u-v)\right)$
+\end{tabbing}
+
+\myimage{TrigCircle.pdf}{1.5in}
+
+{\bf Length of a Chord:} $2r\sin\theta$
+
+\subsubsection*{Other Geometry}
+
+\begin{description}
+\item[Rotation matrix:] 
+  $\begin{bmatrix} \cos \theta & -\sin \theta \\
+  \sin \theta & \cos \theta \end{bmatrix}$ (counter-clockwise by $\theta$)
+\item[Dot product:] $\vec u \cdot \vec v = \|\vec u\| \|\vec v\| \cos \theta$.
+\item[Sphere through 4 Points:] Given $(x_i,y_i,z_i)$, find $(x,y,z)$ and $r$.
+
+$x = 0.5 \cdot M_{12}/M_{11}$, $y = -0.5 \cdot M_{13}/M_{11}$, $z = 0.5 \cdot M_{14}/M_{11}$, $r = d((x,y,z),(x_1,y_1,z_1))$
+
+where
+$\left|\begin{array}{ccccc}
+x^2+y^2+z^2 & x & y & z & 1 \\
+x_1^2+y_1^2+z_1^2 & x_1 & y_1 & z_1 & 1 \\
+x_2^2+y_2^2+z_2^2 & x_2 & y_2 & z_2 & 1 \\
+x_3^2+y_3^2+z_3^2 & x_3 & y_3 & z_3 & 1 \\
+x_4^2+y_4^2+z_4^2 & x_4 & y_4 & z_4 & 1
+\end{array}\right| = 0$
+\end{description}
+
+\subsubsection*{Number Theory}
+
+\begin{description}
+\item[Number and sum of divisors:] multiplicative, $\tau(p^k) = k+1$,
+ $\sigma(p^k) = \frac{p^{k+1}-1}{p-1}$.
+\item[Linear Diophantine equations:] $a\cdot s + b\cdot t = c$ iff
+  $\gcd(a,b) | c$. 
+
+Solutions are $(s_0, t_0) + k \cdot \left(\frac{b}{\gcd(a,b)}, -\frac{a}{\gcd(a,b)}\right)$.
+\end{description}
+
+\subsubsection*{Misc}
+
+\begin{description}
+\item[Pick's Theorem:] $A = i + \frac{b}{2} - 1$, $A$ = area, $i$ = interior
+  lattice points, $b$ = boundary lattice points.
+\item[Euler formula:] $V - E + F - C = 1$, $V$ = vertices, $E$ =
+  edges, $F$ = faces, $C$ = number of connected components.  True for
+  planar graphs and regular polyhedra (assume $C = 1$ in the latter).
+\item[Catalan numbers:] $C_n = \frac{1}{n+1} \binom{2n}{n}$.
+  Recurrence: $C_0 = 1$, and $C_{n+1} = \sum_{i=0} C_i C_{n-i}$.
+\item[Derangements:] $!0 = 1$, $!1 = 0$, $!n = (n-1)(!(n-1) + !(n-2))$.
+\item[Burnside's Lemma:] $|X/G| = \frac{1}{|G|}\sum_{g\in G} |X_g|$ (Points fixed by $g$) $[\frac{1}{24}(n^6+3n^4+12n^3+8n^2)]$
+\item[Number of solutions:] $x_1 + \cdots + x_k = r$ with $x_i \geq 0$:
+  $\binom{r+k-1}{r}$
+\item[Integer Partitions of $n$:] (Also number of nonnegative solutions to $b+2c+3d+4e+...=n$ and the number of nonnegative solutions to $2c+3d+4e+...\leq n$)\\
+
+\hskip-20pt
+{\footnotesize
+\begin{tabular}{|r|rrrrrrrrrr|}
+\hline
+   & x0 & x1 & x2 & x3 & x4 & x5 & x6 & x7 & x8 & x9 \\ \hline
+0x & 1 & 1& 2& 3& 5& 7& 11& 15& 22& 30 \\
+1x & 42& 56& 77& 101& 135& 176& 231& 297& 385& 490 \\
+2x & 627& 792& 1002& 1255& 1575& 1958& 2436& 3010& 3718& 4565 \\
+3x & 5604& 6842& 8349& 10143& 12310& 14883& 17977& 21637& 26015& 31185 \\
+4x & 37338& 44583& 53174& 63261& 75175& 89134& 105558& 124754& 147273& 179525 \\\hline
+\end{tabular}
+}
+
+\item[Lagrange Interpolation:] Given $(x_0,y_0), \cdots , (x_n,y_n)$, the polynomial is:
+
+$P(x) = \displaystyle\sum_{j=1}^{n}P_j(x)$ where $P_j(x) = y_j\displaystyle\prod_{0 \leq k \leq n, k \neq j}\frac{x-x_k}{x_j-x_k}$
+
+\item[Usable Chooses:] $\binom{n}{k}$ is safe assuming 50,000,000 is not TLE: $\binom{28}{k}$ is okay for all $k \leq n$.
+
+\hskip-20pt
+$
+\begin{array}{|c|ccccccccc|}
+ \hline
+ n & 29 & 30-31 & 32-33 & 34-38 & 39-45 & 46-59 & 60-92 & 93-187 & 188-670 \\ \hline
+ k & 11 & 10 & 9 & 8 & 7 & 6 & 5 & 4 & 3 \\\hline
+\end{array}
+$
+\end{description}
+
+\subsubsection{Physics}
+
+\myimage{Ellipse.jpg}{1.25in}
+
+\begin{description}
+ \item[Circumference:] $4a\int_0^{\pi/2}\sqrt{1-\epsilon^2\sin^2(\theta)} d\theta$
+ \item[Polar form relative to focus:] $r(\theta) = \frac{a(1-\epsilon)}{1-\epsilon\cos(\theta-\phi)}$ , where $\phi$ is the angle of rotation of ellipse.
+ \item[Polar form relative to centre:] $r(\theta) = \frac{ab}{\sqrt{(b\cos\theta)^2+(a\sin\theta)^2}}$
+ \item[Minimal Surface of Revolution (Rotating around x-axis):] $y=a\cosh(\frac{x-b}{a})$ \\ Do binary search on $a$ using secant lines -- $(a,b)$ is the extrema
+\item[Rational Roots:] $a_nx^n + \cdots + a_0 = 0$. If $\frac{p}{q}$ is a solution, where $(p,q)=1$, then $p | a_0$ and $q | a_n$.
+\end{description}
+
+$r^2\frac{d\theta}{dt} = \frac{2\pi}{p} ab$
+
+\subsection{Rotating Calipers}
+
+\begin{description}
+\item[Computing distances:]
+The diameter of a convex polygon, The width of a convex polygon, The maximum distance between 2 convex polygons, The minimum distance between 2 convex polygons.
+\item[Enclosing rectangles:]
+The minimum area enclosing rectangle, The minimum perimeter enclosing rectangle
+\item[Triangulations:]
+Onion triangulations, Spiral triangulations Quadrangulations
+\item[Properties of convex polygons:]
+Merging convex hulls, Finding common tangents, Intersecting convex polygons, Critical support lines, Vector sums of convex polygons
+\item[Thinnest transversals:]
+Thinnest-strip transversals
+\end{description}
+
+\section{Tips}
+
+\subsubsection*{If You Are Stuck, Read These!}
+
+\begin{itemize}
+ \item Can you write the question as a whole bunch of inequalities? (Simplex?)
+ \item Can you hash to reduce time? (Normally cuts a factor of N)
+ \item Can you \underline{only} have one ``item'' on a location at a time? Can \underline{only} one ``item'' move through a hallway at one time?
+ \item Can you break the problem into two disjoint sets? (Even/Odd, Black/White, 2-player games)
+ \item Is $n \approx 40$? Consider $O(2^{n/2}\log(2^{n/2}))$.
+ \item Would $\sqrt{N}$ blocks of size $\sqrt{N}$ help?
+ \item Read the Table of Contents!
+ \item Binary search and check (often greedy)
+ \item Sweep line/circle (often with extra data structures)
+ \item DP:
+   \begin{itemize}
+   \item subsets (e.g. TSP type)
+   \item on trees: state = (root, extra info)
+   \item on DAG
+   \item incremental convex hull/envelope code
+   \item probability/expected value in a state transition graphs, deal
+     with cycles through infinite series or linear equations.
+   \end{itemize}
+ \item Represent moving objects as $f(t) = v \cdot t +
+   \text{init. pos}$. and use geometry.
+ \item Coordinate compression
+ \item Meet-in-the-middle
+ \item Max flow of some kind, but need to formulate right graph
+ \item Brute Force:
+   \begin{itemize}
+   \item Are there very few different solutions?
+   \item Are there very few different (effective) inputs?
+   \item Pruning
+   \end{itemize}
+ \item Math:
+   \begin{itemize}
+   \item integration/area computation
+   \item physics: make sure you read all the rules
+   \end{itemize}
+ \item Game Theory (2-player):
+  \begin{itemize}
+   \item Can you duplicate your opponent's move?
+   \item Can formulate it so one person is maximizing something and one person minimizing?
+   \item Write a program to brute force small cases and look for a pattern.
+   \end{itemize}
+ \item Try to looking at the problem in reverse?
+ \item Cycle decomposition of permutation.
+\end{itemize}
+
+\subsubsection*{General Things}
+
+\begin{itemize}
+ \item {\color{red} \textbf{RTFQ} }
+ \item Step away from the computer.  Go to the bathroom.
+ \item Print after every submission, debug on paper.
+ \item Did you remember to handle the empty cases (e.g. n = 0).
+ \item Graphs: is it directed or undirected?
+ \item Floating-point computation: be careful about -0.0
+ \item atan2 can return -pi and +pi
+ \item Watchout for stack overflow (DFS and large variables)
+\end{itemize}
+
+%\subsubsection*{Random Images}
+
+\subsubsection*{Point and Circle Tangent}
+\myimage{point_tangent.png}{1.25in}
+Now Intersect two circles: $(C,R)$ and $(P,L=\sqrt{D^2-R^2})$.
+
+\myimage{cir_cir_tang.png}{1.25in}
+Two circles of radii $r_1 \leq r_2$. For {\bf outer tangent} (Left Picture), make a circle of radius $r_2-r_1$ around $C_2$ (dashed circle) and find tangent lines from $C_1$ ({\color{blue} dashed blue line}), then translate it $r_1$ units ({\color{blue} solid blue line}). For {\bf inner tangent} (Right Picture), make a circle of radius $r_1+r_2$ around $C_1$ (dashed circle) and find tangent lines from $C_2$ ({\color{red} dashed red line}), then translate it $r_2$ units ({\color{red} solid red line}).
+
+\subsubsection*{Holomorphic Centre}
+\myimage{holo_centre.pdf}{1.5in}
+Inner tangent lines go through $I$: \\
+$I = (x,y) = \frac{r_2}{r_1+r_2}(x_1,y_1) + \frac{r_1}{r_1+r_2}(x_2,y_2)$ \hskip 20pt
+$E = (x,y) = \frac{-r_2}{r_1-r_2}(x_1,y_1) + \frac{r_1}{r_1-r_2}(x_2,y_2)$
+
+\subsubsection*{Power Points}
+\myimage{power_point.pdf}{1.5in}
+$\overline{PT}^2 = \overline{PM} \cdot \overline{PN} = \overline{PA} \cdot \overline{PB} = \overline{PO}^2 - \overline{TO}^2$
+
+\subsubsection*{Start of Contest}
+
+\begin{itemize}
+ \item Put this somewhere in the \texttt{.bashrc} file:
+   \begin{lstlisting}
+    function amake(){
+      g++ -g -std=gnu++0x -static -Wall ${1}.cc -o ${1}
+    }
+    ulimit -c unlimited
+    function e { emacs "$@" & }
+   \end{lstlisting}
+ \item Type this command: \texttt{source .bashrc}
+\end{itemize}
+
+\myimage{Inspiration.jpg}{1.3in}
+
+\end{multicols*}
+\end{document}

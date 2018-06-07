@@ -1,0 +1,43 @@
+Some ideas:
+
+  - sanity check: don't fall into a hole that you cannot fall through, unless
+    you can get a gold and the hole won't close before the end of the game
+
+    This may have to be extended to also consider where you land if you fall
+    (e.g. step off a ladder, or falling through multiple layers)
+
+  - go to the nearest subset of k gold?  You can precompute that for small k?
+    Do we only go for gold which is closer to us than to the opposing player?
+
+  - dig behind you every time you can?
+
+  - if you are trapped (in a room with no enemies and can't fall through),
+    kill yourself after visiting all the nodes (but if there is enough 
+    gold we may want to just wait for them to respawn).
+
+    Maybe do a connected component analysis and don't every go into any room
+    without gold.
+
+  - check if you are about to run into an enemy in either direction, and if
+    possible dig a hole
+
+  - if you see an opponent coming, dig a hole to try and disrupt him/her?
+    Killing the opponent is hard, but disrupting him/her can be useful.
+
+  - do we want to form bigger goals then just one move?  i.e. our goal
+    can be "get gold at (x,y)" and we just follow that.  Of course the
+    goal may change if the gold is taken.
+
+  - do we weigh different options?  e.g. if we have to choose between
+    killing an enemy and getting a gold, but we can get to the enemy 
+    faster, perhaps we should kill the enemy?
+
+  - Overall goal:
+
+    - run to the nearest subset of gold (TSP algorithm?)
+
+    - kill enemies along the way, only if we need to or if it is not
+      too far.
+
+    - we may want to repeatedly get a subset of gold and wait for
+      respawn if other subsets are too far away.

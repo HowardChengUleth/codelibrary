@@ -1,0 +1,28 @@
+/* Top-level style sheet */
+
+/*
+ #ccd
+ #900
+ #44c
+*/
+
+body {
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 20px;
+  background-color: #ccb;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-align: left;
+  color: #900;
+}
+
+h1, h2 {
+  border-bottom: thin #800 solid;
+}
+
+.center {
+  border-bottom: none;
+  text-align: center;
+}
