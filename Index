@@ -7,6 +7,8 @@ Arithmetic:
     Big (signed) integer arithmetic
   bignumber.java:
     Java template for using large integer arithmetic (BigInteger)
+  binomial:
+    Computes binomial coefficients
   cra:
     Chinese remainder theorem
   diophantine_sys:
@@ -29,6 +31,8 @@ Arithmetic:
   fflinsolve:
     Fraction-free solution of linear systems of equations (for systems
     with integer coefficients)
+  fib:
+    Computes n-th Fibonacci number with O(log n) complexity
   frac2dec:
     Obtain the decimal representation of a fraction.
   fraction:
