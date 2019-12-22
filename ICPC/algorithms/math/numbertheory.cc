@@ -75,3 +75,30 @@ ll crt(vector<ll>& A, vector<ll>& M, ll n) {
   }
   return x % m;
 }
+
+ull RemoveFactors(ull n, ull u) {
+  while(n % 2 == 0) n /= 2;
+  for(int i = 3; i <= u; i += 2) while(n % i == 0) n /= i;
+  return n;
+}
+
+bool primeTest(ull n) {
+  ull m = RemoveFactors(n, min(n-1, 20ull));
+  if(m != n) return false;
+  ull r = n - 1; int q = 0;
+  while(r % 2 == 0) { ++q; r /= 2; }
+  const set<ull> B({2, 3, 5, 7, 9, 11, 13, 17, 19});
+  if(B.count(n)) return true;
+  for(const ull& b : B) {
+    ull t, pt = fexp(b, r, n);
+    if(pt == 1) continue;
+    ull p = 2;
+    for(int j = 1; j <= q; ++j) {
+      t = fexp(b, p * r, n);
+      if(t == 1 && !(pt == n - 1 || pt == 1)) return false;
+      pt = t; p = p * 2;
+    }
+    if(t != 1) return false;
+  }
+  return true;
+}
