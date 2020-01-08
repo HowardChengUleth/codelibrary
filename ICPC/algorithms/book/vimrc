@@ -1,0 +1,24 @@
+" setxkbmap -option caps:escape "
+set nowrap
+set nobackup
+set nowritebackup
+set smarttab
+set expandtab
+set tabstop=2
+set softtabstop=0
+set shiftwidth=0
+set number relativenumber
+set ai
+set si
+
+" fix shift O lag on some terminals "
+set timeout timeoutlen=5000 ttimeoutlen=100
+
+" tabs "
+map <C-t> :tabnew<Space>
+map <C-n> :tabn<CR>
+
+" testing "
+map <F10> :! ~/run %<CR>
+map <leader>i :tabnew test.in<CR>
+

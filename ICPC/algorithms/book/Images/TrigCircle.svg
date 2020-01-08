@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="338" height="235" style="fill:rgb(0,0,0);stroke:none;stroke-width:1.415;stroke-miterlimit:8;font-family:sans-serif;font-style:normal;font-weight:normal;font-variant:normal;font-stretch:normal;font-size:16;line-height:1.2;text-anchor:start;text-align:start">
+    <metadata>
+        <title>Unit Circle</title>
+        <subject>Trigonometry</subject>
+        <description>A unit circle with the trigonometric functions labeled</description>
+        <type>Image</type>
+        <format>image/svg</format>
+    </metadata>
+    <g id="g-points" style="fill:rgb(0,0,0)">
+        <text x="80" y="138">O</text>
+        <text x="106" y="118" style="font-style:italic">θ</text>
+        <text x="139" y="42">A</text>
+        <text x="139" y="224">B</text>
+        <text x="139" y="120">C</text>
+        <text x="190" y="140">D</text>
+        <text x="322" y="140">E</text>
+        <text x="85" y="20">F</text>
+        <text x="114" y="192">1</text>
+    </g>
+    <g style="fill:none">
+        <g style="stroke:gray">
+            <line id="line-BC" x1="134" y1="208" x2="134" y2="125"/>
+        </g>
+        <g style="stroke:black">
+            <circle id="circle-O-GADB" cx="95" cy="125" r="91.7"/>
+            <line id="line-OA-theta" x1="95" y1="125" x2="134" y2="42"/>
+            <line id="line-OB-minus-theta" x1="95" y1="125" x2="134" y2="208"/>
+            <g style="stroke-dasharray:3,4">
+                <line id="line-A-dashed" x1="134" y1="42" x2="147" y2="14"/>
+            </g>
+            <path id="path-angle-theta" d="M107,125C107,121 104,116 100,114"/>
+            <polyline id="polyline-angle-ortho-O" points="85,125 85,115 95,115"/>
+            <polyline id="polyline-angle-ortho-C" points="124,125 124,115 134,115"/>
+            <polyline id="polyline-angle-ortho-A" points="126,38 130,30 137,34"/>
+        </g>
+        <line id="line-AD-chord" style="stroke:silver" x1="134" y1="42" x2="186.7" y2="125"/>
+        <line id="line-HA-cos" style="stroke:blue" x1="95" y1="42" x2="134" y2="42"/>
+        <line id="line-OC-cos" style="stroke:blue" x1="95" y1="125" x2="134" y2="125"/>
+        <line id="line-CD-versin" style="stroke:green" x1="134" y1="125" x2="186.7" y2="125"/>
+        <line id="line-DE-exsec" style="stroke:hotpink" x1="186.7" y1="125" x2="313" y2="125"/>
+        <g id="g-sec-lines" style="stroke:darkcyan"><!--95,158-313,158-->
+            <g style="stroke-dasharray:3,4">
+                <line id="line-O-yneg" x1="95" y1="125" x2="95" y2="165"/>
+                <line id="line-E-yneg" x1="313" y1="125" x2="313" y2="165"/>
+            </g>
+            <line id="line-sec-parallel-OE" x1="107" y1="170" x2="300" y2="170"/><!--raccourci de 12-->
+            <line id="line-sec-ortho-O" x1="95" y1="165" x2="95" y2="175"/>
+            <line id="line-sec-ortho-E" x1="313" y1="165" x2="313" y2="175"/>
+            <g id="g-sec-arrowheads" style="stroke:none;fill:darkcyan">
+                <polyline id="polyline-sec-arrowhead-O" points="107,165 107,175 95,170"/>
+                <polyline id="polyline-sec-arrowhead-E" points="300,165 300,175 313,170"/>
+            </g>
+        </g>
+        <line id="line-CA-sin" style="stroke:red" x1="134" y1="125" x2="134" y2="42"/>
+        <line id="line-OH-sin" style="stroke:red" x1="95" y1="125" x2="95" y2="42"/>
+        <line id="line-HG-cvs" style="stroke:cyan" x1="95" y1="42" x2="95" y2="33.3"/>
+        <line id="line-GF-excsc" style="stroke:darkgreen" x1="95" y1="33.3" x2="95" y2="24"/>
+        <g id="g-csc-lines" style="stroke:pink"><!--62,125 62,24-->
+            <g style="stroke-dasharray:3,4">
+                <line id="line-O-xneg" x1="95" y1="125" x2="55" y2="125"/>
+                <line id="line-F-xneg" x1="95" y1="24" x2="55" y2="24"/>
+            </g>
+            <line id="line-csc-parallel-OF" x1="50" y1="113" x2="50" y2="36"/><!--raccourci de 12-->
+            <line id="line-csc-ortho-O" x1="45" y1="125" x2="55" y2="125"/>
+            <line id="line-csc-ortho-F" x1="45" y1="24" x2="55" y2="24"/>
+            <g id="g-csc-arrowheads" style="stroke:none;fill:pink">
+                <polyline id="polyline-csc-arrowhead-O" points="45,113 55,113 50,125"/>
+                <polyline id="polyline-csc-arrowhead-E" points="45,36 55,36 50,24"/>
+            </g>
+        </g>
+        <line id="line-FA-cot" style="stroke:darkorange" x1="95" y1="24" x2="134" y2="42"/>
+        <line id="line-AE-tan" style="stroke:tan" x1="134" y1="42" x2="313" y2="125"/>
+    </g>
+    <g style="font-size:14">
+        <text x="136" y="88" style="fill:red">sin</text>
+        <text x="73" y="88" style="fill:red">sin</text>
+        <text x="69" y="44" style="fill:cyan">cvs</text>
+        <text x="52" y="32" style="fill:darkgreen">excsc</text>
+        <text x="28" y="76" style="fill:pink">csc</text>
+        <text x="106" y="138" style="fill:blue">cos</text>
+        <text x="139" y="138" style="fill:green">versin</text>
+        <text x="231" y="138" style="fill:hotpink">exsec</text>
+        <text x="191" y="183" style="fill:darkcyan">sec</text>
+        <text x="185" y="100" style="fill:silver">chord</text>
+        <g id="g-tan" transform="rotate(25)">
+            <text x="105" y="-22" style="fill:goldenrod">cot</text>
+            <text x="215" y="-22" style="fill:tan">tan</text>
+        </g>
+    </g>
+</svg>

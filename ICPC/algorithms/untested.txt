@@ -6,7 +6,6 @@ mcmf.cc
 math:
 
 other:
-lis.cc
 
 string:
 SA.cc

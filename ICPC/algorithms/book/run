@@ -1,0 +1,14 @@
+#!/bin/bash
+clear
+
+echo running... $1
+g++ $1 -g -Og -std=c++17 -Wall -Wextra -Wconversion -Wfatal-errors -fsanitize=address,undefined -o sol || exit
+
+for i in *.in; do
+  # run sample in
+  echo test $i
+  ./sol < $i
+  
+done
+
+# for d in {A..K}; do mkdir $d && cp ~/template.cc $d/d.cc; done
