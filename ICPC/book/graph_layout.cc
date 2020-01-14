@@ -21,13 +21,14 @@ struct Graph {
   // Does not allow for duplicate edges between u and v.
   //    (Note that if "typedef int Edge;", do not write the ".to")
   void add_edge_directed_no_dup(int u, int v, int weight, double cost, ...) {
-    for(int i=0;i<nbr[u].size();i++)
+    for(int i=0;i<nbr[u].size();i++) {
       if(nbr[u][i].to == v) {
-	// An edge between u and v is already here.
-	// Add tie breaking here if necessary (for example, keep the smallest cost).
-	nbr[u][i].cost = min(nbr[u][i].cost,cost);
-	return;
+        // An edge between u and v is already here.
+        // Add tie breaking here if necessary (for example, keep the smallest cost).
+        nbr[u][i].cost = min(nbr[u][i].cost,cost);
+        return;
       } 
+    }
     Edge e = {v,weight,cost, ...};    nbr[u].push_back(e);
   }
   void add_edge_undirected_no_dup(int u, int v, int weight, double cost, ...) {

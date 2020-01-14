@@ -1,5 +1,4 @@
 // Discrete Log Solver -- O(sqrt(p))
-
 ll discrete_log(ll p,ll b,ll n){
   map<ll,ll> M; ll jump = ceil(sqrt(p));
   for(int i=0;i<jump && i<p;i++) M[fast_exp_mod(b,i,p)] = i+1;

@@ -1,6 +1,5 @@
 int asc_seq(int A[], int n, int S[]) {
   vector<int> last(n+1), pos(n+1), pred(n);
-
   if (n == 0) return 0;
   int len = 1;                  last[1] = A[pos[1] = 0];
   for (int i = 1; i < n; i++) {

@@ -1,3 +1,8 @@
+/*  Minimum weight perfect matching in O(n^2 m)
+ *  where n = #people, m = #tasks and n <= m.
+ *  A[i][j] = cost to assign person i task j.
+ *  returns the min weight and a vector containing the optimal assignment
+ */
 template<typename T>
 pair<T, vector<int>> hungarian(const vector<vector<T>>& A) {
   int n = sz(A), m = sz(A[0]); T inf = numeric_limits<T>::max() / 2;

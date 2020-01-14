@@ -1,6 +1,7 @@
-// CHT from monash code binder
-// add lines of the form y = ax + b
-// query maximum value at point x
+/* add lines of the form y = ax + b
+ * query maximum value at point x
+ * both add and query run in O(log n)
+ */
 template<typename T> struct DynamicHull {
   struct Line {
     typedef typename multiset<Line>::iterator It;

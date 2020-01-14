@@ -1,4 +1,8 @@
-// include SCC code
+/*  Include SCC code
+ *  O(n) solve 2SAT problem:
+ *  solve().fst = T/F if there is a valid assignment
+ *  solve().snd = vector<bool> containing the valid assignments.
+ */
 int VAR(int i) { return 2*i; }
 int NOT(int i) { return i^1; }
 struct SAT {

@@ -1,3 +1,4 @@
+// dynamic prefix sums O(log n) queries and updates
 // add(i, v) = add v to A[i] | i in [1, n]
 // query(i) = range sum [1, i]
 struct fenwick {

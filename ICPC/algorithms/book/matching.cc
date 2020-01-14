@@ -1,3 +1,11 @@
+/*  Maximum unweighted bipartite matching in O(n sqrt(n))
+ *  returns the size of matching and vector containing an optimal match
+ *  match().snd[i] = -1 if i'th node (on the left) has no match
+ *                    j if i'th node matched with j'th node(on the right)
+ *
+ *  NOTE: matching on bipartite graph can be used to solve:
+ *        min vertex cover, min edge cover and max independant set
+ */
 struct matching {
   int l, r, p; vector<int> M, U, D; vector<vector<int>> A; queue<int> Q;
   matching (int l, int r) : l(l), r(r), D(r+1), A(r) {}

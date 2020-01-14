@@ -1,3 +1,7 @@
+/*  O(n) find strongly connected components in a digraph
+ *  comp[i] = component containing vertex i.
+ *  dag[i] = adjacency list of the i'th strongly connected component
+ */
 struct SCC {
   int n, c;
   vector<vector<int>> G, H;

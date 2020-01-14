@@ -68,4 +68,3 @@ struct trie {
     return P[a][0];
   }
 };
-
