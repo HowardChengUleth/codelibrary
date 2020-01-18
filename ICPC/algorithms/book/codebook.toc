@@ -1,60 +1,63 @@
 \contentsline {section}{\numberline {1}Setup}{1}
 \contentsline {subsection}{Automated compile and test}{1}
 \contentsline {subsection}{c++ template file}{1}
-\contentsline {subsection}{vim settings}{1}
-\contentsline {section}{\numberline {2}Geometry}{1}
-\contentsline {subsection}{2D Geometry routines}{1}
-\contentsline {subsection}{3D Geometry routines}{3}
-\contentsline {subsection}{Delauney Triangulation}{4}
-\contentsline {subsection}{Great Circle Distance}{4}
+\contentsline {subsection}{vim settings}{2}
+\contentsline {section}{\numberline {2}Geometry}{2}
+\contentsline {subsection}{2D Geometry routines}{2}
+\contentsline {subsection}{3D Geometry routines}{4}
+\contentsline {subsection}{Delauney Triangulation}{5}
+\contentsline {subsection}{Great Circle Distance}{5}
 \contentsline {subsection}{Heron's Triangle Formula}{5}
 \contentsline {subsection}{Area of Union of Rectangles}{5}
-\contentsline {subsection}{Integer 2D Geometry}{5}
-\contentsline {section}{\numberline {3}Math}{5}
-\contentsline {subsection}{Polynomial Algebra}{5}
-\contentsline {subsection}{Square Matrix Exponentiation}{8}
-\contentsline {subsection}{\numberline {3.1}Number Theory}{8}
-\contentsline {subsection}{Chinese Remainder Theorem}{8}
-\contentsline {subsection}{Extended Euclidean}{8}
-\contentsline {subsection}{Discrete Log Solver}{8}
-\contentsline {subsection}{Number Theory Convolution}{8}
-\contentsline {subsection}{\numberline {3.2}Linear Algebra}{9}
-\contentsline {subsection}{System of Linear Diophantine Equations}{9}
-\contentsline {subsection}{Fraction Free Linear Solve}{9}
-\contentsline {subsection}{LU-Decomposition}{9}
-\contentsline {section}{\numberline {4}Dynamic Programming}{10}
-\contentsline {subsection}{Longest Increasing Subsequence}{10}
-\contentsline {subsection}{Vector Sum}{10}
-\contentsline {section}{\numberline {5}Graph Theory \nobreakspace {}\nobreakspace {} (Directed$^{*}$\nobreakspace {}\nobreakspace {} or \nobreakspace {}\nobreakspace {} Undirected$^{**}$\nobreakspace {}\nobreakspace {} or \nobreakspace {}\nobreakspace {} Both$^{***}$)}{10}
-\contentsline {subsection}{General Graph Layout}{10}
+\contentsline {subsection}{Integer 2D Geometry}{6}
+\contentsline {section}{\numberline {3}Math}{6}
+\contentsline {subsection}{Polynomial Algebra}{6}
+\contentsline {subsection}{Square Matrix Exponentiation}{9}
+\contentsline {subsection}{\numberline {3.1}Number Theory}{9}
+\contentsline {subsection}{Chinese Remainder Theorem}{9}
+\contentsline {subsection}{Extended Euclidean}{9}
+\contentsline {subsection}{Discrete Log Solver}{9}
+\contentsline {subsection}{Number Theory Convolution}{9}
+\contentsline {subsection}{\numberline {3.2}Linear Algebra}{10}
+\contentsline {subsection}{System of Linear Diophantine Equations}{10}
+\contentsline {subsection}{Fraction Free Linear Solve}{10}
+\contentsline {subsection}{LU-Decomposition}{10}
+\contentsline {section}{\numberline {4}Dynamic Programming}{11}
+\contentsline {subsection}{Longest Increasing Subsequence}{11}
+\contentsline {subsection}{Vector Sum}{11}
+\contentsline {section}{\numberline {5}Graph Theory \nobreakspace {}\nobreakspace {} (Directed$^{*}$\nobreakspace {}\nobreakspace {} or \nobreakspace {}\nobreakspace {} Undirected$^{**}$\nobreakspace {}\nobreakspace {} or \nobreakspace {}\nobreakspace {} Both$^{***}$)}{11}
+\contentsline {subsection}{General Graph Layout}{11}
 \contentsline {subsection}{Bellman-Ford Algorithm $^{***}$}{11}
 \contentsline {subsection}{Eulerian Tour $^{***}$}{11}
-\contentsline {subsection}{General Graph Matching $^{**}$}{11}
-\contentsline {subsection}{Min-Cost Max-Flow for Sparse Graphs $^{***}$}{11}
-\contentsline {subsection}{Minimum Cut of a Graph $^{**}$}{12}
-\contentsline {subsection}{Network Flow $O(fm)$ $^{***}$}{12}
+\contentsline {subsection}{General Graph Matching $^{**}$}{12}
+\contentsline {subsection}{Min-Cost Max-Flow for Sparse Graphs $^{***}$}{12}
+\contentsline {subsection}{Minimum Cut of a Graph $^{**}$}{13}
+\contentsline {subsection}{Network Flow $O(fm)$ $^{***}$}{13}
 \contentsline {subsection}{Network Flow $O(n^3)$ $^{***}$}{13}
-\contentsline {subsection}{Hungarian Algorithm}{13}
-\contentsline {subsection}{Bipartite Matching}{13}
+\contentsline {subsection}{Hungarian Algorithm}{14}
+\contentsline {subsection}{Bipartite Matching}{14}
 \contentsline {subsection}{Strongly Connected Components}{14}
-\contentsline {subsection}{2SAT}{14}
-\contentsline {section}{\numberline {6}Data Structures}{14}
-\contentsline {subsection}{Fenwick Tree}{14}
-\contentsline {subsection}{Segment Tree}{14}
+\contentsline {subsection}{2SAT}{15}
+\contentsline {section}{\numberline {6}Data Structures}{15}
+\contentsline {subsection}{Fenwick Tree}{15}
+\contentsline {subsection}{Segment Tree}{15}
 \contentsline {subsection}{Lazt Segment Tree}{15}
-\contentsline {subsection}{Union Find}{15}
-\contentsline {subsection}{Dynamic Hull (CHT)}{15}
-\contentsline {subsection}{Centroid Decomposition}{15}
-\contentsline {subsection}{Queue with Minimum Maintained}{16}
-\contentsline {section}{\numberline {7}String Processing}{16}
-\contentsline {subsection}{KMP}{16}
-\contentsline {subsection}{Trie datastructure}{16}
-\contentsline {subsection}{Suffix Array}{17}
-\contentsline {subsection}{String Rotation Period}{17}
-\contentsline {section}{\numberline {8}Algorithms and Misc}{17}
-\contentsline {subsection}{Simpson's Rule}{17}
-\contentsline {subsection}{Simplex Algorithm}{17}
-\contentsline {section}{\numberline {9}Formulas}{18}
-\contentsline {subsubsection}{\numberline {9.0.1}Physics}{19}
-\contentsline {subsection}{\numberline {9.1}Rotating Calipers}{19}
-\contentsline {section}{\numberline {10}Tips}{19}
+\contentsline {subsection}{Union Find}{16}
+\contentsline {subsection}{Dynamic Hull (CHT)}{16}
+\contentsline {subsection}{Centroid Decomposition}{16}
+\contentsline {subsection}{Queue with Minimum Maintained}{17}
+\contentsline {section}{\numberline {7}String Processing}{17}
+\contentsline {subsection}{KMP}{17}
+\contentsline {subsection}{Trie datastructure}{17}
+\contentsline {subsection}{Suffix Array}{18}
+\contentsline {subsection}{String Rotation Period}{18}
+\contentsline {section}{\numberline {8}Algorithms and Misc}{18}
+\contentsline {subsection}{Alpha-Beta pruning}{18}
+\contentsline {subsection}{Simpson's Rule}{18}
+\contentsline {subsection}{Simplex Algorithm}{18}
+\contentsline {subsection}{FFT (floating point)}{19}
+\contentsline {subsection}{Primes for hashing}{19}
+\contentsline {section}{\numberline {9}Formulas}{19}
+\contentsline {subsubsection}{\numberline {9.0.1}Physics}{20}
+\contentsline {subsection}{\numberline {9.1}Rotating Calipers}{20}
+\contentsline {section}{\numberline {10}Tips}{20}
