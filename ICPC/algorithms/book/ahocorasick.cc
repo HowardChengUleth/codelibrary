@@ -1,41 +1,89 @@
-/*  Aho-Corasick
- *  match set of words against test
- *  O(m) build, O(n) match, O(n*k) list matches
+/*  Description: Aho-Corasick tree is used for multiple pattern matching.
+ *  Initialize the tree with create(patterns). find(word) returns for each position
+ *  the index of the longest word that ends there, or -1 if none. findAll(\_, word) finds all words
+ *  (up to $N \sqrt N$ many if no duplicate patterns) that start at each position (shortest first).
+ *  Duplicate patterns are allowed; empty patterns are not.
+ *  To find the longest words that start at each position, reverse all input.
+ *  Time: create is $O(26N)$ where $N$ is the sum of length of patterns.
+ *  find is $O(M)$ where $M$ is the length of the word. findAll is $O(NM)$.
  */
 typedef long long ll;
 struct ahocorasick {
-  struct State { map<char, int> edge; int link, cnt, tot; vector<int> output; };
-  int n, k; vector<State> node; vector<int> len;
-  int make_node() { node.emplace_back(); return n++; }
-  void add(const string& s) {
-    int v = 0;
-    for (char c : s) {
-      if (!node[v].edge[c]) node[v].edge[c] = make_node();
-      v = node[v].edge[c];
+  enum { alpha = 26, first = 'a' };
+  struct Node {
+    // (nmatches is optional)
+    int back, next[alpha], start = -1, end = -1, nmatches = 0;
+    Node(int v) { memset(next, v, sizeof(next)); }
+  };
+  vector<Node> N; vector<int> backp;
+  void insert(string& s, int j) {
+    assert(!s.empty());
+    int n = 0;
+    for (auto& c : s) {
+      int& m = N[n].next[c - first];
+      if (m == -1) n = m = sz(N), N.emplace_back(-1);
+      else n = m;
     }
-    node[v].cnt++, node[v].output.push_back(k++), len.push_back(sz(s));
+    if (N[n].end == -1) N[n].start = j;
+    backp.push_back(N[n].end);
+    N[n].end = j;
+    N[n].nmatches++;
   }
-  void build_links() {
-    node[0].link = -1, node[0].tot = 0; queue<int> q; q.push(0);
-    while (!q.empty()) {
-      int v = q.front(); q.pop(); node[v].tot = node[v].cnt;
-      if (node[v].link != -1) node[v].tot += node[node[v].link].tot;
-      for (auto it : node[v].edge) {
-        int c = it.fst, u = it.snd, j = node[v].link;
-        while (j != -1 and !node[j].edge[c]) j = node[j].link;
-        if (j != -1) node[u].link = node[j].edge[c];
-        q.push(u);
+  ahocorasick(vector<string>& pat) {
+    N.emplace_back(-1);
+    for (int i = 0; i < sz(pat); i++) insert(pat[i], i);
+    N[0].back = sz(N); N.emplace_back(0);
+    queue<int> q;
+    for (q.push(0); !q.empty(); q.pop()) {
+      int n = q.front(), prev = N[n].back;
+      for (int i = 0; i < alpha; i++) {
+        int &ed = N[n].next[i], y = N[prev].next[i];
+        if (ed == -1) ed = y;
+        else {
+          N[ed].back = y;
+          (N[ed].end == -1 ? N[ed].end : backp[N[ed].start]) = N[y].end;
+          N[ed].nmatches += N[y].nmatches;
+          q.push(ed);
+        }
       }
     }
   }
-  ahocorasick() : n(1), k(0), node(1) {}
-  ll count_matches(string x) { // O(sz(x)) find # matches in dictionary
-    ll ans = 0; int v = 0;
-    for (int i = 0; i < sz(x); i++) {
-      while (v and !node[v].edge[x[i]]) v = node[v].link;
-      v = node[v].edge[x[i]]; ans += node[v].tot;
+  pair<vector<int>, ll> find(string word) {
+    int n = 0;
+    vector<int> res; ll count = 0;
+    for (auto& c : word) {
+      n = N[n].next[c - first];
+      res.push_back(N[n].end);
+      count += N[n].nmatches;
     }
-    return ans;
+    return { res, count };
+  }
+  vector<vector<int>> findall(vector<string>& pat, string word) {
+    vector<int> r = find(word).fst;
+    vector<vector<int>> res(sz(word));
+    for (int i = 0; i < sz(word); i++) {
+      int ind = r[i];
+      while (ind != -1) {
+        res[i - sz(pat[ind]) + 1].push_back(ind);
+        ind = backp[ind];
+      }
+    }
+    return res;
   }
 };
 
+// example usage
+vector<string> pat = { "a", "aa", "an", "na", "ana", "c", "cc", "ba", "ab" };
+ahocorasick a(pat);
+
+// count # of matches
+debug(a.find("banana"));
+
+// find all matches
+auto ans = (a.findall(pat, "banana"));
+for (int i = 0; i < sz(ans); i++) {
+  debug(i);
+  for (auto& match : ans[i]) {
+    debug(pat[match]);
+  }
+}
