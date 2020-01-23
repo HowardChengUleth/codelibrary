@@ -203,40 +203,37 @@ void minimum_enclosing_circle(Point P[],int N,Point& c,double& r){
 }
 
 // ------------------------------------------------------------------------------
-// Angle swept from line i,i+1 clockwise to j,j+1 in convex polygon P
-double angle(vector<Point> &P, int i, int j) {
-    int n = P.size();
-    Point u = P[(i+1) % n] - P[i % n];
-    Point v = P[(j+1) % n] - P[j % n];
-    double a = atan2(cross(u, v) / len(u), u*v / len(u));
-    return a < 0 ? a + 2*M_PI : a;
-}
-
-// ------------------------------------------------------------------------------
-// Rotating Calipers, finds all anti-podal pairs for convex polygon P in O(n)
+// Rotating Calipers, finds all anti-podal pairs in O(n)
+// Note: need to update definition of Point, * operator, cross, and colinear
+//       to use integers 
 void calipers(vector<Point> &P) {
     auto nxt = [&](int a) { return (a+1) % P.size(); };
     auto calc = [&](int a, int b) {
-               /* P[a] and P[b] are an anti-podal pair, use them here */ 
-               };
+                    /* P[a] and P[b] are an anti-podal pair, use them here */
+                };
+    auto colinear_ = [&](int i, int j) {
+                         Point d = P[nxt(i)] - P[j];
+                         return colinear(P[i], P[nxt(i)], P[nxt(j)] + d);
+                     };
+    auto ccw_ = [&](int i, int j) {
+                    Point d = P[nxt(i)] - P[j];
+                    return ccw(P[i], P[nxt(i)], P[nxt(j)] + d);
+                };
     int i = 0, j = 1;
-    double r;
-    while ((r = angle(P, i, j)) < M_PI && !dEqual(r, M_PI))
-        j = nxt(j);
+    while (colinear_(i, j)) j = nxt(j);
+    while (ccw_(i, j) == CCW) j = nxt(j);
     do {
         calc(i, j);
-        r = angle(P, i, j);
-        if (dEqual(r, M_PI)) { // lines j,j+1 and i,i+1 parallel
+        Orientation c = ccw_(i, j);
+        if (colinear_(i, j)) { // (i, i+1) and (j,j+1) parallel
             calc(nxt(i), j);
             calc(i, nxt(j));
-            j = nxt(j);
+            j = nxt(j), i = nxt(i);
+        }
+        else if (c == CW) // parallel edges through (i,i+1) and j 
             i = nxt(i);
-        }
-        else if (r > M_PI) { // line i,i+1 and pt j
-            i = nxt(i);
-        }
-        else { // line j,j+1 and pt i
+        else if (c == CCW) // parallel through (j,j+1) and i
             j = nxt(j);
-        }
     } while (j != 1);
 }
+
