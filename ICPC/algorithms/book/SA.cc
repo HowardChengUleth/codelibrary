@@ -1,14 +1,19 @@
+/*  sarray[i] = idx of starting point of the i'th suffix in sorted order
+ *  lcp[i] = length of common prefix between suffix sarray[i] and sarray[i-1]
+ *  note: lcp[0] is defined to be 0.
+ *  complexity: O(n log n).
+ */
 struct SA {
   int n; string str; vector<int> sarray, lcp;
-  suffix_array(string s) : n(s.size()), str(move(s)) { build_sarray(); build_lcp(); }
+  SA(string s) : n(sz(s)), str(move(s)) { }
   void bucket(vector<int>& a, vector<int>& b, vector<int>& r, int n, int K, int off=0) {
     vector<int> c(K+1, 0);
     for (int i = 0; i < n; i++) c[r[a[i]+off]]++;
     for (int i = 0, sum = 0; i <= K; i++) { int t = c[i]; c[i] = sum; sum += t; }
     for (int i = 0; i < n; i++) b[c[r[a[i]+off]]++] = a[i];
   }
-  void build_sarray() {
-    sarray.assign(n, 0); vector<int> r(2*n, 0), sa(2*n), tmp(2*n); if (n <= 1) return;
+  vector<int> build() {
+    sarray.assign(n, 0); vector<int> r(2*n, 0), sa(2*n), tmp(2*n); if (n <= 1) return {};
     for (int i = 0; i < n; i++) r[i] = (int) str[i] - CHAR_MIN + 1, sa[i] = i;
     for (int k = 1; k < n; k *= 2) {
       bucket(sa, tmp, r, n, max(n, 256), k), bucket(tmp, sa, r, n, max(n, 256), 0);
@@ -20,8 +25,9 @@ struct SA {
       copy(tmp.begin(), tmp.begin()+n, r.begin());
     }
     copy(sa.begin(), sa.begin()+n, sarray.begin());
+    return sarray;
   }
-  void build_lcp() {
+  vector<int> build_lcp() {
     int h = 0; vector<int> rank(n); lcp.assign(n, 0);
     for (int i = 0; i < n; i++) rank[sarray[i]] = i;
     for (int i = 0; i < n; i++) {
@@ -32,6 +38,7 @@ struct SA {
       }
       if (h > 0) h--;
     }
+    return lcp;
   }
 };
 
