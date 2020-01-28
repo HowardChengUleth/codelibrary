@@ -7,11 +7,11 @@
 \contentsline {subsection}{3D Geometry routines}{4}
 \contentsline {subsection}{Delauney Triangulation}{5}
 \contentsline {subsection}{Great Circle Distance}{5}
-\contentsline {subsection}{Heron's Triangle Formula}{5}
-\contentsline {subsection}{Area of Union of Rectangles}{5}
+\contentsline {subsection}{Heron's Triangle Formula}{6}
+\contentsline {subsection}{Area of Union of Rectangles}{6}
 \contentsline {subsection}{Integer 2D Geometry}{6}
-\contentsline {section}{\numberline {3}Math}{6}
-\contentsline {subsection}{Polynomial Algebra}{6}
+\contentsline {section}{\numberline {3}Math}{7}
+\contentsline {subsection}{Polynomial Algebra}{7}
 \contentsline {subsection}{Square Matrix Exponentiation}{9}
 \contentsline {subsection}{\numberline {3.1}Number Theory}{9}
 \contentsline {subsection}{Chinese Remainder Theorem}{9}
@@ -21,47 +21,47 @@
 \contentsline {subsection}{\numberline {3.2}Linear Algebra}{10}
 \contentsline {subsection}{System of Linear Diophantine Equations}{10}
 \contentsline {subsection}{Fraction Free Linear Solve}{10}
-\contentsline {subsection}{LU-Decomposition}{10}
+\contentsline {subsection}{LU-Decomposition}{11}
 \contentsline {section}{\numberline {4}Dynamic Programming}{11}
 \contentsline {subsection}{Longest Increasing Subsequence}{11}
 \contentsline {subsection}{Vector Sum}{11}
 \contentsline {subsection}{Longest Palindrome Substring}{11}
 \contentsline {section}{\numberline {5}Graph Theory \nobreakspace {}\nobreakspace {} (Directed$^{*}$\nobreakspace {}\nobreakspace {} or \nobreakspace {}\nobreakspace {} Undirected$^{**}$\nobreakspace {}\nobreakspace {} or \nobreakspace {}\nobreakspace {} Both$^{***}$)}{11}
 \contentsline {subsection}{General Graph Layout}{11}
-\contentsline {subsection}{Bellman-Ford Algorithm $^{***}$}{11}
+\contentsline {subsection}{Bellman-Ford Algorithm $^{***}$}{12}
 \contentsline {subsection}{Eulerian Tour $^{***}$}{12}
 \contentsline {subsection}{General Graph Matching $^{**}$}{12}
-\contentsline {subsection}{Min-Cost Max-Flow for Sparse Graphs $^{***}$}{12}
+\contentsline {subsection}{Min-Cost Max-Flow for Sparse Graphs $^{***}$}{13}
 \contentsline {subsection}{Minimum Cut of a Graph $^{**}$}{13}
 \contentsline {subsection}{Network Flow $O(fm)$ $^{***}$}{13}
 \contentsline {subsection}{Network Flow $O(n^3)$ $^{***}$}{14}
 \contentsline {subsection}{Hungarian Algorithm}{14}
-\contentsline {subsection}{Bipartite Matching}{14}
+\contentsline {subsection}{Bipartite Matching}{15}
 \contentsline {subsection}{Strongly Connected Components}{15}
 \contentsline {subsection}{2SAT}{15}
-\contentsline {section}{\numberline {6}Data Structures}{15}
-\contentsline {subsection}{Fenwick Tree}{15}
-\contentsline {subsection}{Segment Tree}{15}
+\contentsline {section}{\numberline {6}Data Structures}{16}
+\contentsline {subsection}{Fenwick Tree}{16}
+\contentsline {subsection}{Segment Tree}{16}
 \contentsline {subsection}{Lazt Segment Tree}{16}
-\contentsline {subsection}{Union Find}{16}
-\contentsline {subsection}{Dynamic Hull (CHT)}{16}
-\contentsline {subsection}{Centroid Decomposition}{16}
+\contentsline {subsection}{Union Find}{17}
+\contentsline {subsection}{Dynamic Hull (CHT)}{17}
+\contentsline {subsection}{Centroid Decomposition}{17}
 \contentsline {subsection}{Heavy Light Decomposition}{17}
-\contentsline {subsection}{Queue with Minimum Maintained}{17}
-\contentsline {subsection}{GNU policy-based}{17}
+\contentsline {subsection}{Queue with Minimum Maintained}{18}
+\contentsline {subsection}{GNU policy-based}{18}
 \contentsline {section}{\numberline {7}String Processing}{18}
 \contentsline {subsection}{KMP}{18}
 \contentsline {subsection}{Trie datastructure}{18}
-\contentsline {subsection}{Suffix Array}{18}
+\contentsline {subsection}{Suffix Array}{19}
 \contentsline {subsection}{Aho-Corasick}{19}
-\contentsline {subsection}{String Rotation Period}{19}
+\contentsline {subsection}{String Rotation Period}{20}
 \contentsline {section}{\numberline {8}Algorithms and Misc}{20}
 \contentsline {subsection}{Alpha-Beta pruning}{20}
 \contentsline {subsection}{Simpson's Rule}{20}
 \contentsline {subsection}{Simplex Algorithm}{20}
-\contentsline {subsection}{FFT (floating point)}{20}
-\contentsline {subsection}{Primes for hashing}{20}
+\contentsline {subsection}{FFT (floating point)}{21}
+\contentsline {subsection}{Primes for hashing}{21}
 \contentsline {section}{\numberline {9}Formulas}{21}
-\contentsline {subsubsection}{\numberline {9.0.1}Physics}{21}
+\contentsline {subsubsection}{\numberline {9.0.1}Physics}{22}
 \contentsline {subsection}{\numberline {9.1}Rotating Calipers}{22}
 \contentsline {section}{\numberline {10}Tips}{22}

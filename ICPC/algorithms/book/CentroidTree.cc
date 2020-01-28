@@ -26,3 +26,25 @@ struct Centroid {
   }
 };
 
+/*  example usage
+ */
+vector<int> D(n); // depth of node in centroid tree
+vector<vector<int>> A(n); // original tree
+CentroidTree tree(n);
+int root = tree.decompose();
+C = tree.cadj;
+
+void dfssubgraph(int v, int depth) {
+  for (auto& a : A[v])
+    if (D[a] >= D[v]) // do not go up the centroid tree (avoid n^2)
+      dfssubgraph(a, depth);
+}
+
+void dfscentroidtree(int v, int depth) {
+  D[v] = depth;
+  for (auto& a : C[v])
+    // note centroid tree does not have back edges
+    dfscentroidtree(a, depth+1);
+
+  dfssubgraph(v, depth);
+}

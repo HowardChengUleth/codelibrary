@@ -4,8 +4,10 @@ using namespace std;
 #define debug(a) cerr << #a << " = " << (a) << endl;
 #define fst first
 #define snd second
+#define mp(x, y) make_pair(x, y)
 #define sz(x) (int)(x).size()
 #define all(X) begin(X), end(X)
+#define rall(X) rbegin(X), rend(X)
 
 template<typename T, typename U> ostream& operator<<(ostream& o, const pair<T, U>& x) { 
   o << "(" << x.fst << ", " << x.snd << ")"; return o;

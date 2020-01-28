@@ -7,6 +7,19 @@
 // real edges from u to v and subtract all the flow of real edges from
 // v to u.
 
+/*  Note about flow with lower bound on capacity:
+ *  let c(u, v) denote the original capacity of edge(u, v)
+ *  let l(u, v) denote the desired lower bound for capacity on edge(u, v)
+ *  create new vertices s' and t'
+ *  create new edges with:
+ *  cap(s', v) = sum(l(u, v)) for all v~u
+ *  cap(v, t') = sum(l(v, u)) for all u~v
+ *  cap(u, v)  = c(u, v) - l(u, v)
+ *  cap(t, s)  = infinity
+ *
+ *  To find and MINIMAL satifying flow binary search on edge weight of cap(t, s)!
+ */
+
 struct Edge;
 typedef vector<Edge>::iterator EdgeIter;
 
