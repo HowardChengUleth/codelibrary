@@ -366,8 +366,14 @@ Thinnest-strip transversals
 
 %\subsubsection*{Random Images}
 
-Ternary Search Image
+\subsubsection*{Ternary Search Image}
 \myimage{ternarysearch.png}{1.25in}
+\begin{itemize}
+\item $f(m_1) > f(m_2)$: $B = m_2$
+\item $f(m_1) < f(m_2)$: $A = m_1$
+\item $f(m_1) = f(m_2)$: $A = m_1$, $B = m_2$  (precision issues?)
+\end{itemize}
+Also: consider whether $f'(x)$ is available and use binary search instead.
 
 \subsubsection*{Point and Circle Tangent}
 \myimage{point_tangent.png}{1.25in}
