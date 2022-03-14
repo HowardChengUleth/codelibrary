@@ -140,6 +140,7 @@ ll pollardRho(ll n){
 }
 
 bool miller(ll n){
+  if (n == 2) return true;
   ll d = n-1;
   ll s = 0,a,x;
   while(d % 2 == 0){
