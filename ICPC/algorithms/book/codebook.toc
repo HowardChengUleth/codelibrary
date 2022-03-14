@@ -1,5 +1,5 @@
-\contentsline {section}{\numberline {1}Setup}{1}
-\contentsline {subsection}{Automated compile and test}{1}
+\contentsline {section}{\numberline {1}Setup}{2}
+\contentsline {subsection}{Automated compile and test}{2}
 \contentsline {subsection}{c++ template file}{2}
 \contentsline {subsection}{vim settings}{2}
 \contentsline {section}{\numberline {2}Geometry}{2}
@@ -13,12 +13,10 @@
 \contentsline {section}{\numberline {3}Math}{7}
 \contentsline {subsection}{Polynomial Algebra}{7}
 \contentsline {subsection}{Square Matrix Exponentiation}{9}
-\contentsline {subsection}{\numberline {3.1}Number Theory}{9}
 \contentsline {subsection}{Chinese Remainder Theorem}{9}
 \contentsline {subsection}{Extended Euclidean}{9}
 \contentsline {subsection}{Discrete Log Solver}{9}
 \contentsline {subsection}{Number Theory Convolution}{9}
-\contentsline {subsection}{\numberline {3.2}Linear Algebra}{10}
 \contentsline {subsection}{System of Linear Diophantine Equations}{10}
 \contentsline {subsection}{Fraction Free Linear Solve}{10}
 \contentsline {subsection}{LU-Decomposition}{11}
@@ -35,14 +33,14 @@
 \contentsline {subsection}{Minimum Cut of a Graph $^{**}$}{13}
 \contentsline {subsection}{Network Flow $O(fm)$ $^{***}$}{13}
 \contentsline {subsection}{Network Flow $O(n^3)$ $^{***}$}{14}
-\contentsline {subsection}{Hungarian Algorithm}{14}
+\contentsline {subsection}{Hungarian Algorithm}{15}
 \contentsline {subsection}{Bipartite Matching}{15}
 \contentsline {subsection}{Strongly Connected Components}{15}
 \contentsline {subsection}{2SAT}{15}
 \contentsline {section}{\numberline {6}Data Structures}{16}
 \contentsline {subsection}{Fenwick Tree}{16}
 \contentsline {subsection}{Segment Tree}{16}
-\contentsline {subsection}{Lazt Segment Tree}{16}
+\contentsline {subsection}{Lazy Segment Tree}{16}
 \contentsline {subsection}{Union Find}{17}
 \contentsline {subsection}{Dynamic Hull (CHT)}{17}
 \contentsline {subsection}{Centroid Decomposition}{17}
@@ -51,7 +49,7 @@
 \contentsline {subsection}{GNU policy-based}{18}
 \contentsline {section}{\numberline {7}String Processing}{18}
 \contentsline {subsection}{KMP}{18}
-\contentsline {subsection}{Trie datastructure}{18}
+\contentsline {subsection}{Trie datastructure}{19}
 \contentsline {subsection}{Suffix Array}{19}
 \contentsline {subsection}{Aho-Corasick}{19}
 \contentsline {subsection}{String Rotation Period}{20}

@@ -1,10 +1,12 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.12)  4 FEB 2020 14:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.12)  7 FEB 2020 13:12
 entering extended mode
  restricted \write18 enabled.
- file:line:error style messages enabled.
  %&-line parsing enabled.
-**\input codebook.tex
-(./codebook.tex (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+**codebook
+(./codebook.tex
+LaTeX2e <2017-04-15>
+Babel <3.18> and hyphenation patterns for 16 language(s) loaded.
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
 File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
@@ -455,26 +457,23 @@ File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 \tf@toc=\write3
 \openout3 = `codebook.toc'.
 
-LaTeX Font Info:    Font shape `OT1/pcr/bx/n' in size <7> not available
-(Font)              Font shape `OT1/pcr/b/n' tried instead on input line 77.
- (./run)
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 77.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 76.
  [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
-] (./template.cc) (./vimrc)
+]
+LaTeX Font Info:    Font shape `OT1/pcr/bx/n' in size <7> not available
+(Font)              Font shape `OT1/pcr/b/n' tried instead on input line 78.
+ (./run) (./template.cc) (./vimrc)
 (./geometry2D.cc [2] [3]) (./geometry3D.cc [4]) (./delauney_triangulation.cc)
 (./greatcircle.cc [5]) (./heron.cc) (./union_rectangles.cc)
-(./IntegerGeometry.cc) [6] (./algebra.cc [7] [8]) (./matrix.cc)
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 94.
- (./cra.cc)
+(./IntegerGeometry.cc [6]) (./algebra.cc [7] [8]) (./matrix.cc) (./cra.cc)
 (./euclid.cc) (./discrete_log.cc) (./ntt.cc [9]) (./diophantinesolve.cc)
-(./fflinsolve.cc) (./linsolve.cc [10]) (./lis.cc) (./vecsum.cc) (./manacher.cc)
+(./fflinsolve.cc [10]) (./linsolve.cc) (./lis.cc) (./vecsum.cc) (./manacher.cc)
 (./graph_layout.cc [11]) (./bellmanford.cc) (./eulertour.cc) (./genmatching.cc
 [12]) (./mincostmaxflowsparse.cc) (./min_cut.cc) (./networkflow.cc [13])
-(./networkflow2.cc) (./hungarian.cc [14]) (./matching.cc) (./SCC.cc) (./2SAT.cc
-[15]) (./fenwick.cc) (./segment1.cc) (./lazysegment.cc) [16] (./unionfind.cc)
+(./networkflow2.cc) [14] (./hungarian.cc) (./matching.cc) (./SCC.cc) (./2SAT.cc
+[15]) (./fenwick.cc) (./segment1.cc) (./lazysegment.cc [16]) (./unionfind.cc)
 (./CHT.cc) (./CentroidTree.cc) (./heavylight.cc [17]) (./min_queue.cc)
 (./gnudata.cc) (./kmp.cc) (./trie.cc [18]) (./SA.cc) (./ahocorasick.cc [19])
 (./str_rotation_period.cc) (./alpha_beta.cc) (./simpsons_rule.cc) (./simplex.cc
@@ -482,79 +481,81 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
 <Images/TrigCircle.pdf, id=72, 339.2675pt x 235.88126pt>
 File: Images/TrigCircle.pdf Graphic file (type pdf)
 <use Images/TrigCircle.pdf>
-Package pdftex.def Info: Images/TrigCircle.pdf  used on input line 194.
+Package pdftex.def Info: Images/TrigCircle.pdf  used on input line 195.
 (pdftex.def)             Requested size: 155.91998pt x 108.405pt.
  [21 <./Images/TrigCircle.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 244--245
+Underfull \hbox (badness 10000) in paragraph at lines 245--246
 
  []
 
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 248.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 249.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 248.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 249.
 
-Underfull \hbox (badness 10000) in paragraph at lines 246--258
+Underfull \hbox (badness 10000) in paragraph at lines 247--259
 [] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 246--258
+Underfull \hbox (badness 10000) in paragraph at lines 247--259
 
  []
 
 <Images/Ellipse.jpg, id=85, 2007.5pt x 1337.99875pt>
 File: Images/Ellipse.jpg Graphic file (type jpg)
 <use Images/Ellipse.jpg>
-Package pdftex.def Info: Images/Ellipse.jpg  used on input line 277.
+Package pdftex.def Info: Images/Ellipse.jpg  used on input line 278.
 (pdftex.def)             Requested size: 135.51572pt x 90.3375pt.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 290.
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <9> not available
-(Font)              Font shape `OMS/pzccm/m/n' tried instead on input line 309.
+(Font)              Font shape `OMS/pzccm/m/n' tried instead on input line 310.
 
 [22 <./Images/Ellipse.jpg>]
 pdfTeX warning (ext1): too large image resolution ignored
 <Images/ternarysearch.png, id=90, 277.035pt x 197.73875pt>
 File: Images/ternarysearch.png Graphic file (type png)
 <use Images/ternarysearch.png>
-Package pdftex.def Info: Images/ternarysearch.png  used on input line 370.
+Package pdftex.def Info: Images/ternarysearch.png  used on input line 371.
 (pdftex.def)             Requested size: 126.5626pt x 90.3375pt.
 <Images/point_tangent.png, id=92, 252.945pt x 264.23718pt>
 File: Images/point_tangent.png Graphic file (type png)
 <use Images/point_tangent.png>
-Package pdftex.def Info: Images/point_tangent.png  used on input line 379.
+Package pdftex.def Info: Images/point_tangent.png  used on input line 380.
 (pdftex.def)             Requested size: 86.47488pt x 90.3375pt.
 <Images/cir_cir_tang.png, id=93, 834.11626pt x 371.3875pt>
 File: Images/cir_cir_tang.png Graphic file (type png)
 <use Images/cir_cir_tang.png>
-Package pdftex.def Info: Images/cir_cir_tang.png  used on input line 382.
+Package pdftex.def Info: Images/cir_cir_tang.png  used on input line 383.
 (pdftex.def)             Requested size: 202.89023pt x 90.3375pt.
 <Images/holo_centre.pdf, id=94, 641.39626pt x 379.4175pt>
 File: Images/holo_centre.pdf Graphic file (type pdf)
 <use Images/holo_centre.pdf>
-Package pdftex.def Info: Images/holo_centre.pdf  used on input line 386.
+Package pdftex.def Info: Images/holo_centre.pdf  used on input line 387.
 (pdftex.def)             Requested size: 183.25003pt x 108.405pt.
 [23 <./Images/ternarysearch.png> <./Images/point_tangent.png> <./Images/cir_cir
 _tang.png>]
 <Images/power_point.pdf, id=99, 433.62pt x 289.08pt>
 File: Images/power_point.pdf Graphic file (type pdf)
 <use Images/power_point.pdf>
-Package pdftex.def Info: Images/power_point.pdf  used on input line 392.
+Package pdftex.def Info: Images/power_point.pdf  used on input line 393.
 (pdftex.def)             Requested size: 162.6071pt x 108.405pt.
 <Images/Inspiration.jpg, id=100, 501.875pt x 640.3925pt>
 File: Images/Inspiration.jpg Graphic file (type jpg)
 <use Images/Inspiration.jpg>
-Package pdftex.def Info: Images/Inspiration.jpg  used on input line 395.
+Package pdftex.def Info: Images/Inspiration.jpg  used on input line 396.
 (pdftex.def)             Requested size: 73.62387pt x 93.95122pt.
  [24 <./Images/holo_centre.pdf> <./Images/power_point.pdf> <./Images/Inspiratio
 n.jpg>] (./codebook.aux) ) 
 Here is how much of TeX's memory you used:
  6619 strings out of 494324
  85896 string characters out of 6170705
- 868479 words of memory out of 5000000
+ 869479 words of memory out of 5000000
  9639 multiletter control sequences out of 15000+600000
  46790 words of font info for 103 fonts, out of 8000000 for 9000
  475 hyphenation exceptions out of 8191
- 41i,12n,58p,542b,1765s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,12n,58p,531b,1789s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8
 r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb>
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb></
@@ -565,7 +566,7 @@ exmf-dist/fonts/type1/urw/courier/ucrb8a.pfb></usr/share/texlive/texmf-dist/fon
 ts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/tim
 es/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><
 /usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on codebook.pdf (24 pages, 829802 bytes).
+Output written on codebook.pdf (24 pages, 829737 bytes).
 PDF statistics:
  150 PDF objects out of 1000 (max. 8388607)
  98 compressed objects within 1 object stream
