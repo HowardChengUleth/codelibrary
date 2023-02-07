@@ -28,21 +28,21 @@
 #include <stack>
 #include <cassert>
 #include <vector>
+#include <set>
 using namespace std;
 
 const int MAX_NODES = 100005;
 
 struct Graph{
   int numNodes;
-  vector<int> adj[MAX_NODES];
+  set<int> adj[MAX_NODES];
   void clear(){
     numNodes = 0;
     for(int i=0;i<MAX_NODES;i++)
       adj[i].clear();
   }
   void add_edge(int u,int v){
-    if(find(adj[u].begin(),adj[u].end(),v) == adj[u].end())
-      adj[u].push_back(v);
+    adj[u].insert(v);
   }
 };
 
@@ -53,8 +53,7 @@ void DFS(int v,const Graph& G,Graph& G_scc,int& C,
   po[v] = C++;
   
   S.push(v);  P.push(v);
-  for(unsigned int i=0;i<G.adj[v].size();i++){
-    int w = G.adj[v][i];
+  for(auto w : G.adj[v]) {
     if(po[w] == -1){
       DFS(w,G,G_scc,C,P,S);
     } else if(comp[w] == -1){
@@ -88,8 +87,7 @@ int SCC(const Graph& G,Graph& G_scc){
   // You do not need this if you are only interested in the number of
   //    strongly connected components.
   for(int i=0;i<G.numNodes;i++){
-    for(unsigned int j=0;j<G.adj[i].size();j++){
-      int w = G.adj[i][j];
+    for(auto w : G.adj[i]) {
       if(comp[i] != comp[w])
 	G_scc.add_edge(comp[i],comp[w]);
     }
