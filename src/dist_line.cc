@@ -1,5 +1,5 @@
 /*
- * Distance from a point to a line.
+ * Distance from a point to an (infinite) line.
  *
  * Author: Howard Cheng
  * Reference:
@@ -7,7 +7,8 @@
  *
  * This routine computes the shortest distance from a point to a line.
  * ie. distance from point to its orthogonal projection onto the line.
- * Works even if the projection is not on the line.
+ * Works even if the projection is not on the line (i.e. treat the line
+ * as infinite line).
  *
  */
 
