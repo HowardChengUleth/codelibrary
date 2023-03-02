@@ -16,7 +16,7 @@ struct segment {
   }
   // query range A[l], ... , A[r-1].
   T query(int l, int r) {
-    int ans = id;
+    T ans = id;
     for (l += n, r += n; l < r; l /= 2, r /= 2) {
       if (l & 1) ans = op(ans, S[l++]);
       if (r & 1) ans = op(ans, S[--r]);
